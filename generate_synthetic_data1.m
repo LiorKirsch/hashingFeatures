@@ -34,7 +34,7 @@ while last_new_feature <=d && i<=n
     
     rows(running_ind:running_ind + support_size-1) = find(support_set);
     columns(running_ind:running_ind + support_size-1) = i;
-    
+
     if number_of_deaths(i) > 0
         active_support_indices = find(support_set);
         if number_of_deaths(i)>length(active_support_indices)
@@ -52,7 +52,6 @@ while last_new_feature <=d && i<=n
     %support_size = support_size + max(number_of_births(i) - number_of_deaths(i),0);    
     running_ind = running_ind + support_size;
     support_size = sum(support_set);
-    
     
     i = i+1;
     if mod(i,1000) == 0
