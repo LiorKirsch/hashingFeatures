@@ -3,12 +3,12 @@ function [X,Y,trueW] = generate_synthetic_data1
 
 %Parameters
 d = 10^4; %total number of features
-n = 10^5; %total number of examples, also the number of rounds
+n = 10^4; %total number of examples, also the number of rounds
 initial_support_size = 100;
-birth_rate = 3; %each round the number of new active features is Poisson(3)
+birth_rate = 0.5; %each round the number of new active features is Poisson(3)
 death_rate = birth_rate; %each round the number of deactivated features is Poisson(3)
 mean_feature = 5; %features are Poisson counts with this parameter
-label_noise = 0.00; %chance that a label is flipped
+label_noise = 0.001; %chance that a label is flipped
 seed = 1;
 rng(seed);
 X = sparse(d,n);
@@ -32,10 +32,10 @@ while last_new_feature <=d && i<=n
     
     number_of_deaths = poissrnd(death_rate);
     if number_of_deaths > 0
-        active_support_indcies = find(support_set);
-        rp = randperm(length(active_support_indcies));
-        random_ordering = active_support_indcies(rp);
-        support_set(random_ordering(1:number_of_deaths) ) = false;
+        active_support_indices = find(support_set);
+        rp = randperm(length(active_support_indices));
+        %random_ordering = active_support_indices(rp);
+        support_set(active_support_indices(rp(1:number_of_deaths))) = false;
     end
     
     number_of_births = poissrnd(birth_rate);
@@ -45,7 +45,11 @@ while last_new_feature <=d && i<=n
     end
     
     support_size = support_size + number_of_births - number_of_deaths;
-    i = i+1;    
+    i = i+1;  
+    if mod(i,100) == 0
+        fprintf('i = %d, size of support set is %d, nnz ratio is %g \n',i,full(sum(support_set)),nnz(X(:,1:i))/numel(X(:,1:i)));
+        %fprintf('%d \n',i);
+    end
 end
 
 if i<n 
