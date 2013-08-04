@@ -1,16 +1,16 @@
-function [X,Y,trueW] = generate_synthetic_data1
+function [X,Y,trueW] = generate_synthetic_data1(conf)
 
 
 %Parameters
-d = 10^4; %total number of features
-n = 10^5; %total number of examples, also the number of rounds
-initial_support_size = 200;
-birth_rate = 0.10; %each round the number of new active features is Poisson(3)
-death_rate = birth_rate; %each round the number of deactivated features is Poisson(3)
-mean_feature = 5; %features are Poisson counts with this parameter
-label_noise = 0.00; %chance that a label is flipped
-seed = 2;
-rng(seed);
+d = conf.d; %total number of features
+n = conf.n; %total number of examples, also the number of rounds
+initial_support_size = conf.initial_support_size;
+birth_rate = conf.birth_rate; %each round the number of new active features is Poisson(3)
+death_rate = conf.death_rate; %each round the number of deactivated features is Poisson(3)
+mean_feature = conf.mean_feature; %features are Poisson counts with this parameter
+label_noise = conf.label_noise; %chance that a label is flipped
+% seed = 2;
+% rng(seed);
 %X = sparse(d,n);
 
 rows = nan(initial_support_size*n*2,1);

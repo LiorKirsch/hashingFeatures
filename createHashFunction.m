@@ -9,9 +9,6 @@ function [hashFunction, collisions] = createHashFunction(featureSpaceSize, hashT
 %     rng(seed);
     newIndices = randi(hashTableSize, [featureSpaceSize,1]  );
     
-%     newIndices = mod( (1:featureSpaceSize)' .* newIndices, hashTableSize );
-%     newIndices = newIndices + 1; % now starting at 1 not at zero
-
     sparseMatrixContent = ones(size(newIndices));
     if exist('useMinusOnes','var')
         if useMinusOnes
@@ -22,6 +19,6 @@ function [hashFunction, collisions] = createHashFunction(featureSpaceSize, hashT
     hashFunction = sparse(newIndices , 1: featureSpaceSize, sparseMatrixContent , hashTableSize, featureSpaceSize);
     howManyMappedToSame = full(sum(abs(hashFunction),2));
     collisions  = hist(howManyMappedToSame ,0 : max(howManyMappedToSame ) );
-    bar(0 : max(howManyMappedToSame ), collisions);
+%     bar(0 : max(howManyMappedToSame ), collisions);
 
 end
