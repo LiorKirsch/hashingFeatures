@@ -1,0 +1,1459 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (sharedRuntime.cpp:503), pid=2647, tid=140308969993984
+#  Error: guarantee(false,"missing exception handler")
+#
+# JRE version: 6.0_17-b04
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.3-b01 mixed mode linux-amd64 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f9c58c6a800):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2819, stack(0x00007f9c3a40b000,0x00007f9c3a50c000)]
+
+Stack: [0x00007f9c3a40b000,0x00007f9c3a50c000],  sp=0x00007f9c3a508660,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x6bd1ef]
+V  [libjvm.so+0x2be556]
+V  [libjvm.so+0x605506]
+V  [libjvm.so+0x5ff096]
+V  [libjvm.so+0x5ff349]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~ExceptionBlob
+J  sun.font.TrueTypeFont.getTableBuffer(I)Ljava/nio/ByteBuffer;
+j  sun.font.TrueTypeFont.lookupName(SI)Ljava/lang/String;+12
+j  sun.font.TrueTypeFont.getFamilyName(Ljava/util/Locale;)Ljava/lang/String;+17
+j  sun.font.FontFamily.remove(Lsun/font/Font2D;)V+4
+j  sun.font.FontManager.replaceFont(Lsun/font/PhysicalFont;Lsun/font/PhysicalFont;)V+139
+j  sun.font.FontManager.deRegisterBadFont(Lsun/font/Font2D;)V+47
+j  sun.font.FileFont.deregisterFontAndClearStrikeCache()V+1
+j  sun.font.TrueTypeFont.readBlock(Ljava/nio/ByteBuffer;II)I+419
+v  ~StubRoutines::call_stub
+j  sun.font.FileFont.getGlyphImage(JI)J+0
+j  sun.font.FileFontStrike.getGlyphImagePtr(I)J+115
+j  sun.font.FileFontStrike.getGlyphAdvance(IZ)F+116
+j  sun.font.FileFontStrike.getGlyphAdvance(I)F+3
+j  sun.font.CompositeStrike.getGlyphAdvance(I)F+11
+j  sun.font.CompositeStrike.getCodePointAdvance(I)F+12
+J  sun.font.FontDesignMetrics.charsWidth([CII)I
+J  javax.swing.text.Utilities.getTabbedTextWidth(Ljavax/swing/text/View;Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I[I)I
+j  javax.swing.text.Utilities.getTabbedTextWidth(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I)I+8
+j  javax.swing.text.PlainView.getLineWidth(Ljavax/swing/text/Element;)I+54
+j  javax.swing.text.PlainView.updateDamage(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+94
+j  javax.swing.text.PlainView.insertUpdate(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+4
+j  javax.swing.plaf.basic.BasicTextUI$RootView.insertUpdate(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V+14
+j  javax.swing.plaf.basic.BasicTextUI$UpdateHandler.insertUpdate(Ljavax/swing/event/DocumentEvent;)V+101
+j  javax.swing.text.AbstractDocument.fireInsertUpdate(Ljavax/swing/event/DocumentEvent;)V+40
+j  com.mathworks.mde.cmdwin.CmdWinDocument.insertChars(I[CIZ)V+93
+j  com.mathworks.mde.cmdwin.CmdWinDocument.insertBeforePrompt([CIZ)V+101
+j  com.mathworks.mde.cmdwin.CmdWinDocument.access$300(Lcom/mathworks/mde/cmdwin/CmdWinDocument;[CIZ)V+4
+j  com.mathworks.mde.cmdwin.CmdWinDocument$FlushRunnable.run()V+26
+J  java.awt.event.InvocationEvent.dispatch()V
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+J  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f9c5a533800 JavaThread "Code Analyzer updating thread" [_thread_blocked, id=3188, stack(0x00007f9c3133b000,0x00007f9c3143c000)]
+  0x00007f9c5b4e0800 JavaThread "Prefs Updater" daemon [_thread_blocked, id=2973, stack(0x00007f9c3ab2f000,0x00007f9c3ac30000)]
+  0x000000000333f000 JavaThread "Code Analyzer updating thread" [_thread_blocked, id=2925, stack(0x00007f9c3b76a000,0x00007f9c3b86b000)]
+  0x00007f9c5a50a000 JavaThread "Code Analyzer updating thread" [_thread_blocked, id=2924, stack(0x00007f9c3143c000,0x00007f9c3153d000)]
+  0x00007f9c36fd4800 JavaThread "Code Analyzer updating thread" [_thread_blocked, id=2923, stack(0x00007f9c3153d000,0x00007f9c3163e000)]
+  0x0000000002ed7800 JavaThread "Code Analyzer updating thread" [_thread_blocked, id=2921, stack(0x00007f9c31d89000,0x00007f9c31e8a000)]
+  0x00007f9c5a4ac000 JavaThread "Active Reference Queue Daemon" daemon [_thread_blocked, id=2920, stack(0x00007f9c31c88000,0x00007f9c31d89000)]
+  0x00007f9c5a4af000 JavaThread "Timer-12" daemon [_thread_blocked, id=2919, stack(0x00007f9c31e8a000,0x00007f9c31f8b000)]
+  0x00007f9c36e84000 JavaThread "Explorer NavigationContext request queue" [_thread_blocked, id=2893, stack(0x00007f9c3208c000,0x00007f9c3218d000)]
+  0x00007f9c5a50e800 JavaThread "AddressBar directory emptiness poller" [_thread_blocked, id=2872, stack(0x00007f9c3228e000,0x00007f9c3238f000)]
+  0x00007f9c5a48d800 JavaThread "Explorer Refresh Service 1759669550" [_thread_blocked, id=2871, stack(0x00007f9c3238f000,0x00007f9c32490000)]
+  0x00007f9c36e0e000 JavaThread "Timer-1" daemon [_thread_blocked, id=2832, stack(0x00007f9c3285f000,0x00007f9c32960000)]
+  0x0000000003353000 JavaThread "TimerQueue" daemon [_thread_blocked, id=2829, stack(0x00007f9c38614000,0x00007f9c38715000)]
+  0x0000000003097800 JavaThread "Thread-5" daemon [_thread_blocked, id=2824, stack(0x00007f9c3a774000,0x00007f9c3a875000)]
+  0x0000000002c36800 JavaThread "FelixPackageAdmin" daemon [_thread_blocked, id=2823, stack(0x00007f9c3a209000,0x00007f9c3a30a000)]
+  0x0000000002e1f800 JavaThread "FelixStartLevel" daemon [_thread_blocked, id=2822, stack(0x00007f9c3a30a000,0x00007f9c3a40b000)]
+  0x0000000002bc7000 JavaThread "FelixDispatchQueue" daemon [_thread_blocked, id=2821, stack(0x00007f9c3a673000,0x00007f9c3a774000)]
+=>0x00007f9c58c6a800 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=2819, stack(0x00007f9c3a40b000,0x00007f9c3a50c000)]
+  0x00007f9c58c6a000 JavaThread "AWT-Shutdown" [_thread_blocked, id=2818, stack(0x00007f9c3a50c000,0x00007f9c3a60d000)]
+  0x00007f9c590ba000 JavaThread "com.google.common.base.internal.Finalizer" daemon [_thread_blocked, id=2817, stack(0x00007f9c3b669000,0x00007f9c3b76a000)]
+  0x00007f9c5906c000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2814, stack(0x00007f9c3b96c000,0x00007f9c3ba6d000)]
+  0x0000000002a71000 JavaThread "Timer-0" [_thread_blocked, id=2813, stack(0x00007f9c3c7e8000,0x00007f9c3c8e9000)]
+  0x00007f9c58c89000 JavaThread "EventMgr Dispatcher" daemon [_thread_in_native, id=2744, stack(0x00007f9c5d779000,0x00007f9c5df7a000)]
+  0x00007f9c58315800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2777, stack(0x00007f9c3d38e000,0x00007f9c3d48f000)]
+  0x00000000029f8000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=2776, stack(0x00007f9c3d48f000,0x00007f9c3d590000)]
+  0x00000000028da000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2775, stack(0x00007f9c3d590000,0x00007f9c3d691000)]
+  0x0000000002a38000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2774, stack(0x00007f9c3d691000,0x00007f9c3d792000)]
+  0x00007f9c58311800 JavaThread "Finalizer" daemon [_thread_blocked, id=2763, stack(0x00007f9c3d792000,0x00007f9c3d893000)]
+  0x00007f9c5830f800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2762, stack(0x00007f9c3d893000,0x00007f9c3d994000)]
+  0x00007f9c580e0000 JavaThread "main" [_thread_blocked, id=2745, stack(0x00007f9c5cf78000,0x00007f9c5d779000)]
+
+Other Threads:
+  0x00007f9c5830b000 VMThread [stack: 0x00007f9c3d994000,0x00007f9c3da95000] [id=2761]
+  0x00007f9c58320000 WatcherThread [stack: 0x00007f9c3d28d000,0x00007f9c3d38e000] [id=2778]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 35968K, used 10166K [0x00007f9c4f860000, 0x00007f9c524a0000, 0x00007f9c52960000)
+  eden space 31104K, 17% used [0x00007f9c4f860000,0x00007f9c4fd8db10,0x00007f9c516c0000)
+  from space 4864K, 100% used [0x00007f9c517b0000,0x00007f9c51c70000,0x00007f9c51c70000)
+  to   space 7104K, 0% used [0x00007f9c51db0000,0x00007f9c51db0000,0x00007f9c524a0000)
+ PSOldGen        total 83456K, used 50166K [0x00007f9c46560000, 0x00007f9c4b6e0000, 0x00007f9c4f860000)
+  object space 83456K, 60% used [0x00007f9c46560000,0x00007f9c4965db00,0x00007f9c4b6e0000)
+ PSPermGen       total 123520K, used 67938K [0x00007f9c3e560000, 0x00007f9c45e00000, 0x00007f9c46560000)
+  object space 123520K, 55% used [0x00007f9c3e560000,0x00007f9c427b8990,0x00007f9c45e00000)
+
+Dynamic libraries:
+00400000-00404000 r-xp 00000000 00:18 5444489                            /private/biu/packages/matlab/R2012b/bin/glnxa64/MATLAB
+00603000-00604000 rw-p 00003000 00:18 5444489                            /private/biu/packages/matlab/R2012b/bin/glnxa64/MATLAB
+025c9000-02a84000 rw-p 00000000 00:00 0                                  [heap]
+02a84000-02a85000 rwxp 00000000 00:00 0                                  [heap]
+02a85000-02ba7000 rw-p 00000000 00:00 0                                  [heap]
+02ba7000-02ba8000 rwxp 00000000 00:00 0                                  [heap]
+02ba8000-02e58000 rw-p 00000000 00:00 0                                  [heap]
+02e58000-02e5a000 rwxp 00000000 00:00 0                                  [heap]
+02e5a000-02f08000 rw-p 00000000 00:00 0                                  [heap]
+02f08000-02f09000 rwxp 00000000 00:00 0                                  [heap]
+02f09000-02f0b000 rw-p 00000000 00:00 0                                  [heap]
+02f0b000-02f0d000 rwxp 00000000 00:00 0                                  [heap]
+02f0d000-02f50000 rw-p 00000000 00:00 0                                  [heap]
+02f50000-02f51000 rwxp 00000000 00:00 0                                  [heap]
+02f51000-02f52000 rw-p 00000000 00:00 0                                  [heap]
+02f52000-02f53000 rwxp 00000000 00:00 0                                  [heap]
+02f53000-03063000 rw-p 00000000 00:00 0                                  [heap]
+03063000-03064000 rwxp 00000000 00:00 0                                  [heap]
+03064000-03154000 rw-p 00000000 00:00 0                                  [heap]
+03154000-03155000 rwxp 00000000 00:00 0                                  [heap]
+03155000-0316d000 rw-p 00000000 00:00 0                                  [heap]
+0316d000-0316e000 rwxp 00000000 00:00 0                                  [heap]
+0316e000-0316f000 rw-p 00000000 00:00 0                                  [heap]
+0316f000-03170000 rwxp 00000000 00:00 0                                  [heap]
+03170000-03174000 rw-p 00000000 00:00 0                                  [heap]
+03174000-03177000 rwxp 00000000 00:00 0                                  [heap]
+03177000-031b6000 rw-p 00000000 00:00 0                                  [heap]
+031b6000-031b7000 rwxp 00000000 00:00 0                                  [heap]
+031b7000-03284000 rw-p 00000000 00:00 0                                  [heap]
+03284000-03285000 rwxp 00000000 00:00 0                                  [heap]
+03285000-0328a000 rw-p 00000000 00:00 0                                  [heap]
+0328a000-0328d000 rwxp 00000000 00:00 0                                  [heap]
+0328d000-032c2000 rw-p 00000000 00:00 0                                  [heap]
+032c2000-032c3000 rwxp 00000000 00:00 0                                  [heap]
+032c3000-0343a000 rw-p 00000000 00:00 0                                  [heap]
+0343a000-0343d000 rwxp 00000000 00:00 0                                  [heap]
+0343d000-03496000 rw-p 00000000 00:00 0                                  [heap]
+03496000-03497000 rwxp 00000000 00:00 0                                  [heap]
+03497000-03498000 rw-p 00000000 00:00 0                                  [heap]
+03498000-0349a000 rwxp 00000000 00:00 0                                  [heap]
+0349a000-0351b000 rw-p 00000000 00:00 0                                  [heap]
+0351b000-0351c000 rwxp 00000000 00:00 0                                  [heap]
+0351c000-0352d000 rw-p 00000000 00:00 0                                  [heap]
+0352d000-0352f000 rwxp 00000000 00:00 0                                  [heap]
+0352f000-03530000 rw-p 00000000 00:00 0                                  [heap]
+03530000-03531000 rwxp 00000000 00:00 0                                  [heap]
+03531000-03752000 rw-p 00000000 00:00 0                                  [heap]
+03752000-03753000 rwxp 00000000 00:00 0                                  [heap]
+03753000-049c6000 rw-p 00000000 00:00 0                                  [heap]
+7f9c28000000-7f9c28a62000 rw-p 00000000 00:00 0 
+7f9c28a62000-7f9c2c000000 ---p 00000000 00:00 0 
+7f9c2e995000-7f9c2ea95000 rw-p 00000000 00:00 0 
+7f9c2ea95000-7f9c2eb7e000 r-xp 00000000 00:18 5459944                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgfortran.so.3.0.0
+7f9c2eb7e000-7f9c2ed7d000 ---p 000e9000 00:18 5459944                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgfortran.so.3.0.0
+7f9c2ed7d000-7f9c2ed7f000 rw-p 000e8000 00:18 5459944                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgfortran.so.3.0.0
+7f9c2ed7f000-7f9c2ed80000 rw-p 00000000 00:00 0 
+7f9c2ed80000-7f9c2edd3000 r-xp 00000000 00:18 5444288                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack.so
+7f9c2edd3000-7f9c2efd2000 ---p 00053000 00:18 5444288                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack.so
+7f9c2efd2000-7f9c2efd3000 rw-p 00052000 00:18 5444288                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack.so
+7f9c2efd3000-7f9c2eff5000 r-xp 00000000 00:18 5444296                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspqr.so
+7f9c2eff5000-7f9c2f1f4000 ---p 00022000 00:18 5444296                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspqr.so
+7f9c2f1f4000-7f9c2f1f5000 rw-p 00021000 00:18 5444296                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspqr.so
+7f9c2f1f5000-7f9c2f229000 r-xp 00000000 00:18 5444295                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwrookfastbp.so
+7f9c2f229000-7f9c2f428000 ---p 00034000 00:18 5444295                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwrookfastbp.so
+7f9c2f428000-7f9c2f429000 rw-p 00033000 00:18 5444295                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwrookfastbp.so
+7f9c2f429000-7f9c2f459000 r-xp 00000000 00:18 5444294                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwma57.so
+7f9c2f459000-7f9c2f658000 ---p 00030000 00:18 5444294                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwma57.so
+7f9c2f658000-7f9c2f659000 rw-p 0002f000 00:18 5444294                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwma57.so
+7f9c2f659000-7f9c2f664000 r-xp 00000000 00:18 5444293                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcsparse.so
+7f9c2f664000-7f9c2f863000 ---p 0000b000 00:18 5444293                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcsparse.so
+7f9c2f863000-7f9c2f864000 rw-p 0000a000 00:18 5444293                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcsparse.so
+7f9c2f864000-7f9c2f866000 r-xp 00000000 00:18 5444289                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack_api.so
+7f9c2f866000-7f9c2fa66000 ---p 00002000 00:18 5444289                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack_api.so
+7f9c2fa66000-7f9c2fa67000 rw-p 00002000 00:18 5444289                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwumfpack_api.so
+7f9c2fa67000-7f9c2fb7d000 r-xp 00000000 00:18 5444301                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathlinalg.so
+7f9c2fb7d000-7f9c2fd7d000 ---p 00116000 00:18 5444301                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathlinalg.so
+7f9c2fd7d000-7f9c2fd80000 rw-p 00116000 00:18 5444301                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathlinalg.so
+7f9c2fd80000-7f9c2fd83000 rwxp 00000000 00:00 0 
+7f9c2fd83000-7f9c2fe81000 rwxp 00000000 00:00 0 
+7f9c2fe81000-7f9c2fe84000 rwxp 00000000 00:00 0 
+7f9c2fe84000-7f9c2ff82000 rwxp 00000000 00:00 0 
+7f9c2ff82000-7f9c2ff85000 rwxp 00000000 00:00 0 
+7f9c2ff85000-7f9c30083000 rwxp 00000000 00:00 0 
+7f9c30083000-7f9c3083f000 rw-s 00000000 00:04 1015810                    /SYSV00000000 (deleted)
+7f9c3083f000-7f9c308d5000 r-xp 00000000 00:18 5444340                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwconfig.so
+7f9c308d5000-7f9c30ad4000 ---p 00096000 00:18 5444340                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwconfig.so
+7f9c30ad4000-7f9c30adc000 rw-p 00095000 00:18 5444340                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwconfig.so
+7f9c30adc000-7f9c30add000 rw-p 00000000 00:00 0 
+7f9c30af4000-7f9c30bf9000 r-xp 00000000 00:18 5444258                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libinstutil.so
+7f9c30bf9000-7f9c30df9000 ---p 00105000 00:18 5444258                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libinstutil.so
+7f9c30df9000-7f9c30dff000 rw-p 00105000 00:18 5444258                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libinstutil.so
+7f9c30dff000-7f9c30e01000 rw-p 00000000 00:00 0 
+7f9c30e01000-7f9c30e17000 r-xp 00000000 00:18 6226327                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libdcpr.so
+7f9c30e17000-7f9c30f19000 ---p 00016000 00:18 6226327                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libdcpr.so
+7f9c30f19000-7f9c30f31000 rw-p 00018000 00:18 6226327                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libdcpr.so
+7f9c30f31000-7f9c30f34000 rwxp 00000000 00:00 0 
+7f9c30f34000-7f9c31032000 rwxp 00000000 00:00 0 
+7f9c31032000-7f9c31132000 rw-p 00000000 00:00 0 
+7f9c31132000-7f9c3113a000 r-xp 00000000 08:05 18615555                   /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f9c3113a000-7f9c31339000 ---p 00008000 08:05 18615555                   /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f9c31339000-7f9c3133a000 r--p 00007000 08:05 18615555                   /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f9c3133a000-7f9c3133b000 rw-p 00008000 08:05 18615555                   /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f9c3133b000-7f9c3133e000 ---p 00000000 00:00 0 
+7f9c3133e000-7f9c3143c000 rwxp 00000000 00:00 0 
+7f9c3143c000-7f9c3143f000 ---p 00000000 00:00 0 
+7f9c3143f000-7f9c3153d000 rwxp 00000000 00:00 0 
+7f9c3153d000-7f9c31540000 ---p 00000000 00:00 0 
+7f9c31540000-7f9c3163e000 rwxp 00000000 00:00 0 
+7f9c3163e000-7f9c31642000 r-xp 00000000 00:18 5444372                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemlint.so
+7f9c31642000-7f9c31841000 ---p 00004000 00:18 5444372                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemlint.so
+7f9c31841000-7f9c31842000 rw-p 00003000 00:18 5444372                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemlint.so
+7f9c31842000-7f9c31844000 r-xp 00000000 00:18 5444377                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelex.so
+7f9c31844000-7f9c31a43000 ---p 00002000 00:18 5444377                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelex.so
+7f9c31a43000-7f9c31a44000 rw-p 00001000 00:18 5444377                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelex.so
+7f9c31a44000-7f9c31a85000 r-xp 00000000 00:18 5444382                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativecmdwin.so
+7f9c31a85000-7f9c31c84000 ---p 00041000 00:18 5444382                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativecmdwin.so
+7f9c31c84000-7f9c31c88000 rw-p 00040000 00:18 5444382                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativecmdwin.so
+7f9c31c88000-7f9c31c8b000 ---p 00000000 00:00 0 
+7f9c31c8b000-7f9c31d89000 rwxp 00000000 00:00 0 
+7f9c31d89000-7f9c31d8c000 ---p 00000000 00:00 0 
+7f9c31d8c000-7f9c31e8a000 rwxp 00000000 00:00 0 
+7f9c31e8a000-7f9c31e8d000 ---p 00000000 00:00 0 
+7f9c31e8d000-7f9c31f8b000 rwxp 00000000 00:00 0 
+7f9c31f8b000-7f9c31f8e000 rwxp 00000000 00:00 0 
+7f9c31f8e000-7f9c3208c000 rwxp 00000000 00:00 0 
+7f9c3208c000-7f9c3208f000 ---p 00000000 00:00 0 
+7f9c3208f000-7f9c3218d000 rwxp 00000000 00:00 0 
+7f9c3218d000-7f9c32190000 rwxp 00000000 00:00 0 
+7f9c32190000-7f9c3228e000 rwxp 00000000 00:00 0 
+7f9c3228e000-7f9c32291000 ---p 00000000 00:00 0 
+7f9c32291000-7f9c3238f000 rwxp 00000000 00:00 0 
+7f9c3238f000-7f9c32392000 ---p 00000000 00:00 0 
+7f9c32392000-7f9c32490000 rwxp 00000000 00:00 0 
+7f9c32490000-7f9c32493000 rwxp 00000000 00:00 0 
+7f9c32493000-7f9c32591000 rwxp 00000000 00:00 0 
+7f9c32591000-7f9c32659000 r-xp 00000000 00:18 5444413                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgbuiltins.so
+7f9c32659000-7f9c32858000 ---p 000c8000 00:18 5444413                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgbuiltins.so
+7f9c32858000-7f9c3285f000 rw-p 000c7000 00:18 5444413                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgbuiltins.so
+7f9c3285f000-7f9c32862000 ---p 00000000 00:00 0 
+7f9c32862000-7f9c32960000 rwxp 00000000 00:00 0 
+7f9c32960000-7f9c32963000 r-xp 00000000 08:05 23855308                   /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f9c32963000-7f9c32b62000 ---p 00003000 08:05 23855308                   /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f9c32b62000-7f9c32b63000 r--p 00002000 08:05 23855308                   /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f9c32b63000-7f9c32b64000 rw-p 00003000 08:05 23855308                   /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f9c32b64000-7f9c32b9f000 r-xp 00000000 08:05 23855282                   /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7f9c32b9f000-7f9c32d9e000 ---p 0003b000 08:05 23855282                   /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7f9c32d9e000-7f9c32d9f000 r--p 0003a000 08:05 23855282                   /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7f9c32d9f000-7f9c32da0000 rw-p 0003b000 08:05 23855282                   /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7f9c32da0000-7f9c32e1a000 r-xp 00000000 08:05 23855301                   /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f9c32e1a000-7f9c3301a000 ---p 0007a000 08:05 23855301                   /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f9c3301a000-7f9c3301b000 r--p 0007a000 08:05 23855301                   /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f9c3301b000-7f9c3301e000 rw-p 0007b000 08:05 23855301                   /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f9c3301e000-7f9c33060000 r-xp 00000000 08:05 23855251                   /lib/x86_64-linux-gnu/libdbus-1.so.3.5.7
+7f9c33060000-7f9c33260000 ---p 00042000 08:05 23855251                   /lib/x86_64-linux-gnu/libdbus-1.so.3.5.7
+7f9c33260000-7f9c33261000 r--p 00042000 08:05 23855251                   /lib/x86_64-linux-gnu/libdbus-1.so.3.5.7
+7f9c33261000-7f9c33262000 rw-p 00043000 08:05 23855251                   /lib/x86_64-linux-gnu/libdbus-1.so.3.5.7
+7f9c33262000-7f9c33356000 r-xp 00000000 08:05 23855521                   /lib/x86_64-linux-gnu/libglib-2.0.so.0.3000.0
+7f9c33356000-7f9c33555000 ---p 000f4000 08:05 23855521                   /lib/x86_64-linux-gnu/libglib-2.0.so.0.3000.0
+7f9c33555000-7f9c33556000 r--p 000f3000 08:05 23855521                   /lib/x86_64-linux-gnu/libglib-2.0.so.0.3000.0
+7f9c33556000-7f9c33557000 rw-p 000f4000 08:05 23855521                   /lib/x86_64-linux-gnu/libglib-2.0.so.0.3000.0
+7f9c33557000-7f9c33558000 rw-p 00000000 00:00 0 
+7f9c33558000-7f9c33578000 r-xp 00000000 08:05 18615767                   /usr/lib/libgnome-keyring.so.0.1.1
+7f9c33578000-7f9c33778000 ---p 00020000 08:05 18615767                   /usr/lib/libgnome-keyring.so.0.1.1
+7f9c33778000-7f9c33779000 r--p 00020000 08:05 18615767                   /usr/lib/libgnome-keyring.so.0.1.1
+7f9c33779000-7f9c3377a000 rw-p 00021000 08:05 18615767                   /usr/lib/libgnome-keyring.so.0.1.1
+7f9c3377a000-7f9c33791000 r-xp 00000000 08:05 18087944                   /tmp/jna/jna6301283111625841684.tmp (deleted)
+7f9c33791000-7f9c33990000 ---p 00017000 08:05 18087944                   /tmp/jna/jna6301283111625841684.tmp (deleted)
+7f9c33990000-7f9c33991000 r--p 00016000 08:05 18087944                   /tmp/jna/jna6301283111625841684.tmp (deleted)
+7f9c33991000-7f9c33992000 rw-p 00017000 08:05 18087944                   /tmp/jna/jna6301283111625841684.tmp (deleted)
+7f9c33992000-7f9c33a72000 r-xp 00000000 00:18 5444370                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemvm.so
+7f9c33a72000-7f9c33c72000 ---p 000e0000 00:18 5444370                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemvm.so
+7f9c33c72000-7f9c33c7e000 rw-p 000e0000 00:18 5444370                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativemvm.so
+7f9c33c7e000-7f9c33dec000 r-xp 00000000 00:18 5444357                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmvm.so
+7f9c33dec000-7f9c33feb000 ---p 0016e000 00:18 5444357                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmvm.so
+7f9c33feb000-7f9c33fff000 rw-p 0016d000 00:18 5444357                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmvm.so
+7f9c33fff000-7f9c34000000 rw-p 00000000 00:00 0 
+7f9c34000000-7f9c371f1000 rw-p 00000000 00:00 0 
+7f9c371f1000-7f9c371f3000 rwxp 00000000 00:00 0 
+7f9c371f3000-7f9c371f9000 rw-p 00000000 00:00 0 
+7f9c371f9000-7f9c371fa000 rwxp 00000000 00:00 0 
+7f9c371fa000-7f9c371fb000 rw-p 00000000 00:00 0 
+7f9c371fb000-7f9c371fe000 rwxp 00000000 00:00 0 
+7f9c371fe000-7f9c37379000 rw-p 00000000 00:00 0 
+7f9c37379000-7f9c3737a000 rwxp 00000000 00:00 0 
+7f9c3737a000-7f9c373a4000 rw-p 00000000 00:00 0 
+7f9c373a4000-7f9c373a5000 rwxp 00000000 00:00 0 
+7f9c373a5000-7f9c373ab000 rw-p 00000000 00:00 0 
+7f9c373ab000-7f9c373ac000 rwxp 00000000 00:00 0 
+7f9c373ac000-7f9c373b7000 rw-p 00000000 00:00 0 
+7f9c373b7000-7f9c373b8000 rwxp 00000000 00:00 0 
+7f9c373b8000-7f9c373bc000 rw-p 00000000 00:00 0 
+7f9c373bc000-7f9c373bd000 rwxp 00000000 00:00 0 
+7f9c373bd000-7f9c37427000 rw-p 00000000 00:00 0 
+7f9c37427000-7f9c37428000 rwxp 00000000 00:00 0 
+7f9c37428000-7f9c37429000 rw-p 00000000 00:00 0 
+7f9c37429000-7f9c3742c000 rwxp 00000000 00:00 0 
+7f9c3742c000-7f9c37ffe000 rw-p 00000000 00:00 0 
+7f9c37ffe000-7f9c38000000 ---p 00000000 00:00 0 
+7f9c38061000-7f9c380c8000 r-xp 00000000 00:18 5444373                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativesettings.so
+7f9c380c8000-7f9c382c8000 ---p 00067000 00:18 5444373                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativesettings.so
+7f9c382c8000-7f9c382cc000 rw-p 00067000 00:18 5444373                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativesettings.so
+7f9c382cc000-7f9c382cd000 rw-p 00000000 00:00 0 
+7f9c382cd000-7f9c382e0000 r-xp 00000000 00:18 5444251                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxmlxrcsc.so
+7f9c382e0000-7f9c384e0000 ---p 00013000 00:18 5444251                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxmlxrcsc.so
+7f9c384e0000-7f9c384e2000 rw-p 00013000 00:18 5444251                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxmlxrcsc.so
+7f9c384e2000-7f9c3850e000 r-xp 00000000 00:18 6226459                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjpeg.so
+7f9c3850e000-7f9c3860e000 ---p 0002c000 00:18 6226459                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjpeg.so
+7f9c3860e000-7f9c38614000 rw-p 0002c000 00:18 6226459                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjpeg.so
+7f9c38614000-7f9c38617000 ---p 00000000 00:00 0 
+7f9c38617000-7f9c38715000 rwxp 00000000 00:00 0 
+7f9c38715000-7f9c387c0000 r-xp 00000000 00:18 5444335                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlint.so
+7f9c387c0000-7f9c389bf000 ---p 000ab000 00:18 5444335                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlint.so
+7f9c389bf000-7f9c389c6000 rw-p 000aa000 00:18 5444335                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlint.so
+7f9c389c6000-7f9c38c6a000 r-xp 00000000 00:18 5444367                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbuiltins.so
+7f9c38c6a000-7f9c38e69000 ---p 002a4000 00:18 5444367                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbuiltins.so
+7f9c38e69000-7f9c38e84000 rw-p 002a3000 00:18 5444367                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbuiltins.so
+7f9c38e84000-7f9c38e86000 rw-p 00000000 00:00 0 
+7f9c38e86000-7f9c38e8a000 r-xp 00000000 00:18 5444298                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathxps.so
+7f9c38e8a000-7f9c39089000 ---p 00004000 00:18 5444298                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathxps.so
+7f9c39089000-7f9c3908a000 rw-p 00003000 00:18 5444298                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathxps.so
+7f9c3908a000-7f9c39bb5000 r-xp 00000000 00:18 5444299                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathelem.so
+7f9c39bb5000-7f9c39db5000 ---p 00b2b000 00:18 5444299                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathelem.so
+7f9c39db5000-7f9c39dfe000 rw-p 00b2b000 00:18 5444299                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathelem.so
+7f9c39dfe000-7f9c39e04000 r-xp 00000000 00:18 5444381                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativehg.so
+7f9c39e04000-7f9c3a003000 ---p 00006000 00:18 5444381                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativehg.so
+7f9c3a003000-7f9c3a004000 rw-p 00005000 00:18 5444381                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativehg.so
+7f9c3a004000-7f9c3a009000 r-xp 00000000 00:18 5444375                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelmgr.so
+7f9c3a009000-7f9c3a208000 ---p 00005000 00:18 5444375                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelmgr.so
+7f9c3a208000-7f9c3a209000 rw-p 00004000 00:18 5444375                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativelmgr.so
+7f9c3a209000-7f9c3a20c000 ---p 00000000 00:00 0 
+7f9c3a20c000-7f9c3a30a000 rwxp 00000000 00:00 0 
+7f9c3a30a000-7f9c3a30d000 ---p 00000000 00:00 0 
+7f9c3a30d000-7f9c3a40b000 rwxp 00000000 00:00 0 
+7f9c3a40b000-7f9c3a40e000 ---p 00000000 00:00 0 
+7f9c3a40e000-7f9c3a50c000 rwxp 00000000 00:00 0 
+7f9c3a50c000-7f9c3a50f000 ---p 00000000 00:00 0 
+7f9c3a50f000-7f9c3a60d000 rwxp 00000000 00:00 0 
+7f9c3a673000-7f9c3a676000 ---p 00000000 00:00 0 
+7f9c3a676000-7f9c3a774000 rwxp 00000000 00:00 0 
+7f9c3a774000-7f9c3a777000 ---p 00000000 00:00 0 
+7f9c3a777000-7f9c3a875000 rwxp 00000000 00:00 0 
+7f9c3a92d000-7f9c3a92f000 r-xp 00000000 00:18 5444257                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativewebproxy.so
+7f9c3a92f000-7f9c3ab2e000 ---p 00002000 00:18 5444257                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativewebproxy.so
+7f9c3ab2e000-7f9c3ab2f000 rw-p 00001000 00:18 5444257                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativewebproxy.so
+7f9c3ab2f000-7f9c3ab32000 ---p 00000000 00:00 0 
+7f9c3ab32000-7f9c3ac30000 rwxp 00000000 00:00 0 
+7f9c3ad2a000-7f9c3ad2d000 rwxp 00000000 00:00 0 
+7f9c3ad2d000-7f9c3ae2b000 rwxp 00000000 00:00 0 
+7f9c3ae2b000-7f9c3ae2e000 rwxp 00000000 00:00 0 
+7f9c3ae2e000-7f9c3af2c000 rwxp 00000000 00:00 0 
+7f9c3af2c000-7f9c3af2d000 r--s 00000000 08:05 8261082                    /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le64.cache-3
+7f9c3af2d000-7f9c3af36000 r--s 00000000 08:05 8259884                    /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-3
+7f9c3af36000-7f9c3af38000 r--s 00000000 08:05 8260571                    /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le64.cache-3
+7f9c3af38000-7f9c3af3b000 r--s 00000000 08:05 8261036                    /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le64.cache-3
+7f9c3af3b000-7f9c3af3f000 r--s 00000000 08:05 8261022                    /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le64.cache-3
+7f9c3af3f000-7f9c3af40000 r--s 00000000 08:05 8260592                    /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le64.cache-3
+7f9c3af40000-7f9c3af43000 r--s 00000000 08:05 8261020                    /var/cache/fontconfig/b5ea634b0fb353b8ea17632d1f9ef766-le64.cache-3
+7f9c3af43000-7f9c3af48000 r--s 00000000 08:05 8261018                    /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le64.cache-3
+7f9c3af48000-7f9c3af4e000 r--s 00000000 08:05 8260698                    /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le64.cache-3
+7f9c3af4e000-7f9c3af54000 r--s 00000000 08:05 8260667                    /var/cache/fontconfig/515ca1ebc4b18308bea979be5704f9db-le64.cache-3
+7f9c3af54000-7f9c3af5d000 r--s 00000000 08:05 8260637                    /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le64.cache-3
+7f9c3af5d000-7f9c3af6d000 r--s 00000000 08:05 8260632                    /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le64.cache-3
+7f9c3af6d000-7f9c3af70000 r--s 00000000 08:05 8260621                    /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le64.cache-3
+7f9c3af70000-7f9c3af9e000 r--s 00000000 08:05 8260603                    /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le64.cache-3
+7f9c3af9e000-7f9c3afae000 r--s 00000000 08:05 8260600                    /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-3
+7f9c3b091000-7f9c3b094000 rwxp 00000000 00:00 0 
+7f9c3b094000-7f9c3b192000 rwxp 00000000 00:00 0 
+7f9c3b192000-7f9c3b199000 r--s 00082000 00:18 5883346                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/jsse.jar
+7f9c3b199000-7f9c3b1a0000 r--s 00111000 00:18 5883447                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/resources.jar
+7f9c3b244000-7f9c3b24b000 r-xp 00000000 00:18 6226333                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnio.so
+7f9c3b24b000-7f9c3b34a000 ---p 00007000 00:18 6226333                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnio.so
+7f9c3b34a000-7f9c3b34c000 rw-p 00006000 00:18 6226333                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnio.so
+7f9c3b34c000-7f9c3b35f000 r-xp 00000000 00:18 6226520                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnet.so
+7f9c3b35f000-7f9c3b460000 ---p 00013000 00:18 6226520                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnet.so
+7f9c3b460000-7f9c3b463000 rw-p 00014000 00:18 6226520                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libnet.so
+7f9c3b463000-7f9c3b468000 r-xp 00000000 00:18 5444263                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejava.so
+7f9c3b468000-7f9c3b668000 ---p 00005000 00:18 5444263                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejava.so
+7f9c3b668000-7f9c3b669000 rw-p 00005000 00:18 5444263                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejava.so
+7f9c3b669000-7f9c3b66c000 ---p 00000000 00:00 0 
+7f9c3b66c000-7f9c3b76a000 rwxp 00000000 00:00 0 
+7f9c3b76a000-7f9c3b76d000 ---p 00000000 00:00 0 
+7f9c3b76d000-7f9c3b86b000 rwxp 00000000 00:00 0 
+7f9c3b86b000-7f9c3b86e000 rwxp 00000000 00:00 0 
+7f9c3b86e000-7f9c3b96c000 rwxp 00000000 00:00 0 
+7f9c3b96c000-7f9c3b96f000 ---p 00000000 00:00 0 
+7f9c3b96f000-7f9c3ba6d000 rwxp 00000000 00:00 0 
+7f9c3ba6d000-7f9c3baeb000 r-xp 00000000 00:18 6226689                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libfontmanager.so
+7f9c3baeb000-7f9c3bbea000 ---p 0007e000 00:18 6226689                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libfontmanager.so
+7f9c3bbea000-7f9c3bc00000 rw-p 0007d000 00:18 6226689                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libfontmanager.so
+7f9c3bc00000-7f9c3bc11000 rw-p 00000000 00:00 0 
+7f9c3bc11000-7f9c3bc20000 r-xp 00000000 08:05 18617866                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f9c3bc20000-7f9c3be1f000 ---p 0000f000 08:05 18617866                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f9c3be1f000-7f9c3be20000 r--p 0000e000 08:05 18617866                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f9c3be20000-7f9c3be21000 rw-p 0000f000 08:05 18617866                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f9c3be21000-7f9c3be26000 r-xp 00000000 08:05 18612858                   /usr/lib/libXtst.so.6.1.0
+7f9c3be26000-7f9c3c025000 ---p 00005000 08:05 18612858                   /usr/lib/libXtst.so.6.1.0
+7f9c3c025000-7f9c3c026000 r--p 00004000 08:05 18612858                   /usr/lib/libXtst.so.6.1.0
+7f9c3c026000-7f9c3c027000 rw-p 00005000 08:05 18612858                   /usr/lib/libXtst.so.6.1.0
+7f9c3c027000-7f9c3c028000 rw-p 00000000 00:00 0 
+7f9c3c028000-7f9c3c033000 r--s 00000000 08:05 8260404                    /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-3
+7f9c3c033000-7f9c3c037000 r--s 00000000 08:05 8261686                    /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-3
+7f9c3c037000-7f9c3c04b000 r--s 00000000 08:05 8259917                    /var/cache/fontconfig/865f88548240fee46819705c6468c165-le64.cache-3
+7f9c3c04b000-7f9c3c08d000 r-xp 00000000 00:18 6226586                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7f9c3c08d000-7f9c3c18c000 ---p 00042000 00:18 6226586                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7f9c3c18c000-7f9c3c197000 rw-p 00041000 00:18 6226586                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7f9c3c197000-7f9c3c199000 rw-p 00000000 00:00 0 
+7f9c3c199000-7f9c3c22b000 r-xp 00000000 00:18 6226464                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libawt.so
+7f9c3c22b000-7f9c3c32a000 ---p 00092000 00:18 6226464                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libawt.so
+7f9c3c32a000-7f9c3c343000 rw-p 00091000 00:18 6226464                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libawt.so
+7f9c3c343000-7f9c3c368000 rw-p 00000000 00:00 0 
+7f9c3c368000-7f9c3c36b000 r-xp 00000000 00:18 5444376                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativeservices.so
+7f9c3c36b000-7f9c3c56a000 ---p 00003000 00:18 5444376                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativeservices.so
+7f9c3c56a000-7f9c3c56b000 rw-p 00002000 00:18 5444376                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativeservices.so
+7f9c3c56b000-7f9c3c56c000 r--s 00004000 00:18 5083840                    /private/biu/packages/matlab/R2012b/java/jarext/gluegen-rt.jar
+7f9c3c56c000-7f9c3c577000 r--s 00105000 00:18 5083839                    /private/biu/packages/matlab/R2012b/java/jarext/jogl.jar
+7f9c3c577000-7f9c3c578000 r--s 00000000 00:18 5753076                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/shared/hwconnectinstaller.jar
+7f9c3c578000-7f9c3c587000 r--s 0008a000 00:18 5362805                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/nnet.jar
+7f9c3c587000-7f9c3c593000 r--s 0004b000 00:18 5326557                    /private/biu/packages/matlab/R2012b/java/jar/comparisons.jar
+7f9c3c593000-7f9c3c595000 r--s 00006000 00:18 5326102                    /private/biu/packages/matlab/R2012b/java/jar/product.jar
+7f9c3c595000-7f9c3c598000 r--s 00010000 00:18 6275714                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/implementations/svnkitintegration.jar
+7f9c3c598000-7f9c3c59a000 r--s 00007000 00:18 6275717                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/implementations/svnintegration.jar
+7f9c3c59a000-7f9c3c59d000 r--s 00008000 00:18 6275715                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/implementations/svncore.jar
+7f9c3c59d000-7f9c3c5a4000 r--s 0002b000 00:18 6275712                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/implementations/localcm.jar
+7f9c3c5a4000-7f9c3c5a9000 r--s 0001f000 00:18 6275713                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/util.jar
+7f9c3c5a9000-7f9c3c5ab000 r--s 00004000 00:18 6275716                    /private/biu/packages/matlab/R2012b/java/jar/cmlink/api.jar
+7f9c3c5ab000-7f9c3c5ac000 r--s 00003000 00:18 5326094                    /private/biu/packages/matlab/R2012b/java/jar/webproxy.jar
+7f9c3c5ac000-7f9c3c5ae000 r--s 00002000 00:18 5326093                    /private/biu/packages/matlab/R2012b/java/jar/net.jar
+7f9c3c5ae000-7f9c3c5b6000 r--s 00069000 00:18 5326095                    /private/biu/packages/matlab/R2012b/java/jar/mlwebservices.jar
+7f9c3c5b6000-7f9c3c5b9000 r--s 00023000 00:18 5083762                    /private/biu/packages/matlab/R2012b/java/jarext/jdom.jar
+7f9c3c5b9000-7f9c3c5bc000 r--s 00017000 00:18 5083941                    /private/biu/packages/matlab/R2012b/java/jarext/TimingFramework.jar
+7f9c3c5bc000-7f9c3c5c1000 r--s 0002c000 00:18 5362299                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/rptgencore.jar
+7f9c3c5c1000-7f9c3c5c3000 r--s 00008000 00:18 5753073                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/shared/sigbldr.jar
+7f9c3c5c3000-7f9c3c5c5000 r--s 00003000 00:18 5326104                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/mwlic_client/mw-license-server-client.jar
+7f9c3c5c5000-7f9c3c5c8000 r--s 00008000 00:18 5753075                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/shared/computils.jar
+7f9c3c5c8000-7f9c3c5ca000 r--s 00005000 00:18 5326073                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/ws_client_core/mw-service-client-core.jar
+7f9c3c5ca000-7f9c3c62b000 r--s 00311000 00:18 5362807                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/distcomp.jar
+7f9c3c62b000-7f9c3c62d000 r--s 0000d000 00:18 5083929                    /private/biu/packages/matlab/R2012b/java/jarext/RXTXcomm.jar
+7f9c3c62d000-7f9c3c67f000 r--s 004f6000 00:18 5362808                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/simbio.jar
+7f9c3c67f000-7f9c3c680000 r--s 00008000 00:18 5362801                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/images.jar
+7f9c3c680000-7f9c3c696000 r--s 00165000 00:18 5362301                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/instrument.jar
+7f9c3c696000-7f9c3c699000 r--s 0000f000 00:18 6275704                    /private/biu/packages/matlab/R2012b/java/jarext/svnkit/sequence.jar
+7f9c3c699000-7f9c3c69e000 r--s 00038000 00:18 6275707                    /private/biu/packages/matlab/R2012b/java/jarext/svnkit/trilead.jar
+7f9c3c69e000-7f9c3c6a2000 r--s 000f3000 00:18 6275708                    /private/biu/packages/matlab/R2012b/java/jarext/svnkit/jna.jar
+7f9c3c6a2000-7f9c3c6b1000 r--s 000aa000 00:18 6275706                    /private/biu/packages/matlab/R2012b/java/jarext/svnkit/sqljet.jar
+7f9c3c6b1000-7f9c3c6dc000 r--s 00301000 00:18 6275705                    /private/biu/packages/matlab/R2012b/java/jarext/svnkit/svnkit.jar
+7f9c3c6dc000-7f9c3c6e1000 r--s 0002c000 00:18 5083806                    /private/biu/packages/matlab/R2012b/java/jarext/commons-net.jar
+7f9c3c6e1000-7f9c3c6e9000 r--s 00044000 00:18 5326566                    /private/biu/packages/matlab/R2012b/java/jar/publishparser.jar
+7f9c3c6e9000-7f9c3c6eb000 r--s 00000000 00:18 5362799                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/hdlcoder.jar
+7f9c3c6eb000-7f9c3c6f0000 r--s 00032000 00:18 5362796                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/database.jar
+7f9c3c6f0000-7f9c3c6f6000 r--s 00037000 00:18 5083850                    /private/biu/packages/matlab/R2012b/java/jarext/helpsearch.jar
+7f9c3c6f6000-7f9c3c6fb000 r--s 00045000 00:18 5083990                    /private/biu/packages/matlab/R2012b/java/jarext/protobuf.jar
+7f9c3c6fb000-7f9c3c700000 r--s 0001e000 00:18 5326567                    /private/biu/packages/matlab/R2012b/java/jar/instwiz.jar
+7f9c3c700000-7f9c3c702000 r--s 00002000 00:18 5081696                    /private/biu/packages/matlab/R2012b/java/jarext/ant-launcher.jar
+7f9c3c702000-7f9c3c719000 r--s 0015c000 00:18 5081698                    /private/biu/packages/matlab/R2012b/java/jarext/ant.jar
+7f9c3c719000-7f9c3c71f000 r--s 0009e000 00:18 5083933                    /private/biu/packages/matlab/R2012b/java/jarext/bluecove.jar
+7f9c3c71f000-7f9c3c721000 r--s 00013000 00:18 5083932                    /private/biu/packages/matlab/R2012b/java/jarext/bluecove-emu.jar
+7f9c3c721000-7f9c3c725000 r--s 00021000 00:18 5083936                    /private/biu/packages/matlab/R2012b/java/jarext/bluecove-bluez.jar
+7f9c3c725000-7f9c3c729000 r--s 00037000 00:18 5341775                    /private/biu/packages/matlab/R2012b/java/jarext/ice/icessl.jar
+7f9c3c729000-7f9c3c72a000 r--s 00000000 00:18 5341771                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6xalan.jar
+7f9c3c72a000-7f9c3c72d000 r--s 00015000 00:18 5341774                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6util.jar
+7f9c3c72d000-7f9c3c72f000 r--s 0000e000 00:18 5341777                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6swing.jar
+7f9c3c72f000-7f9c3c733000 r--s 00044000 00:18 5341778                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6js.jar
+7f9c3c733000-7f9c3c734000 r--s 00000000 00:18 5341772                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6https.jar
+7f9c3c734000-7f9c3c737000 r--s 00016000 00:18 5341780                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6http.jar
+7f9c3c737000-7f9c3c73a000 r--s 00011000 00:18 5341776                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6extra.jar
+7f9c3c73a000-7f9c3c743000 r--s 00081000 00:18 5341773                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ib6core.jar
+7f9c3c743000-7f9c3c74b000 r--s 000a0000 00:18 5341779                    /private/biu/packages/matlab/R2012b/java/jarext/ice/ice.jar
+7f9c3c74b000-7f9c3c74c000 r--s 00001000 00:18 5362700                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/vision.jar
+7f9c3c74c000-7f9c3c75d000 r--s 000b3000 00:18 5362394                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/bioinfo.jar
+7f9c3c75d000-7f9c3c75f000 r--s 00019000 00:18 6275698                    /private/biu/packages/matlab/R2012b/java/jarext/sqlite4java/sqlite4java.jar
+7f9c3c75f000-7f9c3c760000 r--s 00000000 00:18 6097010                    /private/biu/packages/matlab/R2012b/java/jar/physmod/sm/gui/importers.jar
+7f9c3c760000-7f9c3c76b000 r--s 00367000 00:18 6097015                    /private/biu/packages/matlab/R2012b/java/jar/physmod/sm/gui/editor.jar
+7f9c3c76b000-7f9c3c76c000 r--s 00004000 00:18 6097009                    /private/biu/packages/matlab/R2012b/java/jar/physmod/sm/gui/gfx.jar
+7f9c3c76c000-7f9c3c76d000 r--s 00000000 00:18 6097017                    /private/biu/packages/matlab/R2012b/java/jar/physmod/sm/gui/test.jar
+7f9c3c76d000-7f9c3c76e000 r--s 00000000 00:18 6097014                    /private/biu/packages/matlab/R2012b/java/jar/physmod/sm/gui/exceptions.jar
+7f9c3c76e000-7f9c3c773000 r--s 00048000 00:18 5083890                    /private/biu/packages/matlab/R2012b/java/jarext/dom4j.jar
+7f9c3c773000-7f9c3c77a000 r--s 00054000 00:18 5362803                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/compiler.jar
+7f9c3c77a000-7f9c3c780000 r--s 00033000 00:18 5326096                    /private/biu/packages/matlab/R2012b/java/jar/instutil.jar
+7f9c3c780000-7f9c3c787000 r--s 00059000 00:18 5083814                    /private/biu/packages/matlab/R2012b/java/jarext/log4j.jar
+7f9c3c787000-7f9c3c794000 r--s 0007f000 00:18 5083780                    /private/biu/packages/matlab/R2012b/java/jarext/commons-collections.jar
+7f9c3c794000-7f9c3c7a2000 r--s 00095000 00:18 5326100                    /private/biu/packages/matlab/R2012b/java/jarext/guice/guice.jar
+7f9c3c7a2000-7f9c3c7cd000 r--s 0050d000 00:18 5083974                    /private/biu/packages/matlab/R2012b/java/jarext/Jmol.jar
+7f9c3c7cd000-7f9c3c7e8000 r--s 00125000 00:18 6179200                    /private/biu/packages/matlab/R2012b/java/jar/project/impl.jar
+7f9c3c7e8000-7f9c3c7eb000 ---p 00000000 00:00 0 
+7f9c3c7eb000-7f9c3c8e9000 rwxp 00000000 00:00 0 
+7f9c3c8e9000-7f9c3c9dc000 r-xp 00000000 00:18 5444369                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejmi.so
+7f9c3c9dc000-7f9c3cbdc000 ---p 000f3000 00:18 5444369                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejmi.so
+7f9c3cbdc000-7f9c3cbe9000 rw-p 000f3000 00:18 5444369                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libnativejmi.so
+7f9c3cbe9000-7f9c3cbea000 rw-p 00000000 00:00 0 
+7f9c3cbea000-7f9c3cc28000 r--s 002a9000 00:18 5326549                    /private/biu/packages/matlab/R2012b/java/jar/widgets.jar
+7f9c3cc28000-7f9c3cc2e000 r--s 00040000 00:18 5326544                    /private/biu/packages/matlab/R2012b/java/jar/jmi.jar
+7f9c3cc2e000-7f9c3cc33000 r--s 00013000 00:18 5326550                    /private/biu/packages/matlab/R2012b/java/jar/matlab.jar
+7f9c3cc33000-7f9c3cc3b000 r--s 0005b000 00:18 5083771                    /private/biu/packages/matlab/R2012b/java/jarext/lucene-core-2.0.0.jar
+7f9c3cc3b000-7f9c3cc3d000 r--s 0000d000 00:18 5083772                    /private/biu/packages/matlab/R2012b/java/jarext/lucene-analyzers-2.0.0.jar
+7f9c3cc3d000-7f9c3cc41000 r--s 00011000 00:18 5083926                    /private/biu/packages/matlab/R2012b/java/jarext/avalon-framework.jar
+7f9c3cc41000-7f9c3cc70000 r--s 002c1000 00:18 5083922                    /private/biu/packages/matlab/R2012b/java/jarext/fop.jar
+7f9c3cc70000-7f9c3cc72000 r--s 00006000 00:18 5362355                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/sldependencyanalysis.jar
+7f9c3cc72000-7f9c3cc74000 r--s 0000d000 00:18 5083938                    /private/biu/packages/matlab/R2012b/java/jarext/AnimatedTransitions.jar
+7f9c3cc74000-7f9c3cc78000 r--s 0001f000 00:18 5326086                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/XmlSchema.jar
+7f9c3cc78000-7f9c3cc7e000 r--s 0007a000 00:18 5326089                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/wstx-asl.jar
+7f9c3cc7e000-7f9c3cc83000 r--s 00020000 00:18 5326082                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/wsdl4j.jar
+7f9c3cc83000-7f9c3cc85000 r--s 00007000 00:18 5326091                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/neethi.jar
+7f9c3cc85000-7f9c3cc8b000 r--s 00059000 00:18 5326080                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/mail.jar
+7f9c3cc8b000-7f9c3cc90000 r--s 00026000 00:18 5326079                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/httpcore.jar
+7f9c3cc90000-7f9c3cc92000 r--s 00006000 00:18 5326092                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/geronimo-stax-api.jar
+7f9c3cc92000-7f9c3cc98000 r--s 00045000 00:18 5326090                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/commons-httpclient.jar
+7f9c3cc98000-7f9c3cc99000 r--s 00004000 00:18 5326088                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axis2-transport-local.jar
+7f9c3cc99000-7f9c3cc9c000 r--s 00023000 00:18 5326084                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axis2-transport-http.jar
+7f9c3cc9c000-7f9c3cca9000 r--s 000e8000 00:18 5326078                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axis2-kernel.jar
+7f9c3cca9000-7f9c3ccb4000 r--s 000b4000 00:18 5326085                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axis2-adb.jar
+7f9c3ccb4000-7f9c3ccb7000 r--s 0001b000 00:18 5326087                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axiom-impl.jar
+7f9c3ccb7000-7f9c3ccc0000 r--s 0005d000 00:18 5326081                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/axiom-api.jar
+7f9c3ccc0000-7f9c3ccc2000 r--s 0000e000 00:18 5326083                    /private/biu/packages/matlab/R2012b/java/jarext/axis2/activation.jar
+7f9c3ccc2000-7f9c3ccc4000 r--s 00089000 00:18 5342965                    /private/biu/packages/matlab/R2012b/java/jar/physmod/gui/gfx/viewer.jar
+7f9c3ccc4000-7f9c3ccc6000 r--s 00008000 00:18 5362305                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/fixedpoint.jar
+7f9c3ccc6000-7f9c3ccc7000 r--s 00007000 00:18 5083904                    /private/biu/packages/matlab/R2012b/java/jarext/batik-xml.jar
+7f9c3ccc7000-7f9c3cccd000 r--s 00028000 00:18 5083912                    /private/biu/packages/matlab/R2012b/java/jarext/batik-swing.jar
+7f9c3cccd000-7f9c3ccd0000 r--s 0001d000 00:18 5083919                    /private/biu/packages/matlab/R2012b/java/jarext/batik-util.jar
+7f9c3ccd0000-7f9c3ccd3000 r--s 0000d000 00:18 5083908                    /private/biu/packages/matlab/R2012b/java/jarext/batik-script.jar
+7f9c3ccd3000-7f9c3cce0000 r--s 00087000 00:18 5083913                    /private/biu/packages/matlab/R2012b/java/jarext/batik-svg-dom.jar
+7f9c3cce0000-7f9c3cce3000 r--s 00026000 00:18 5083914                    /private/biu/packages/matlab/R2012b/java/jarext/batik-codec.jar
+7f9c3cce3000-7f9c3cce8000 r--s 00030000 00:18 5083921                    /private/biu/packages/matlab/R2012b/java/jarext/batik-svggen.jar
+7f9c3cce8000-7f9c3ccee000 r--s 00024000 00:18 5083920                    /private/biu/packages/matlab/R2012b/java/jarext/batik-gui-util.jar
+7f9c3ccee000-7f9c3ccef000 r--s 00002000 00:18 5083915                    /private/biu/packages/matlab/R2012b/java/jarext/batik-ext.jar
+7f9c3ccef000-7f9c3ccf1000 r--s 00010000 00:18 5083905                    /private/biu/packages/matlab/R2012b/java/jarext/batik-parser.jar
+7f9c3ccf1000-7f9c3ccf9000 r--s 00045000 00:18 5083907                    /private/biu/packages/matlab/R2012b/java/jarext/batik-css.jar
+7f9c3ccf9000-7f9c3ccfd000 r--s 00038000 00:18 5083916                    /private/biu/packages/matlab/R2012b/java/jarext/batik-gvt.jar
+7f9c3ccfd000-7f9c3cd07000 r--s 00080000 00:18 5083917                    /private/biu/packages/matlab/R2012b/java/jarext/batik-bridge.jar
+7f9c3cd07000-7f9c3cd0e000 r--s 0005c000 00:18 5083903                    /private/biu/packages/matlab/R2012b/java/jarext/batik-awt-util.jar
+7f9c3cd0e000-7f9c3cd10000 r--s 0001c000 00:18 5083909                    /private/biu/packages/matlab/R2012b/java/jarext/batik-transcoder.jar
+7f9c3cd10000-7f9c3cd14000 r--s 00027000 00:18 5083906                    /private/biu/packages/matlab/R2012b/java/jarext/batik-dom.jar
+7f9c3cd14000-7f9c3cd16000 r--s 0000f000 00:18 5083910                    /private/biu/packages/matlab/R2012b/java/jarext/batik-extension.jar
+7f9c3cd16000-7f9c3cd19000 r--s 00015000 00:18 5083918                    /private/biu/packages/matlab/R2012b/java/jarext/batik-anim.jar
+7f9c3cd19000-7f9c3cd21000 r--s 0004a000 00:18 5362811                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/stats.jar
+7f9c3cd21000-7f9c3cd26000 r--s 00026000 00:18 5083781                    /private/biu/packages/matlab/R2012b/java/jarext/commons-math.jar
+7f9c3cd26000-7f9c3cd35000 r--s 0008d000 00:18 5362795                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/curvefit.jar
+7f9c3cd35000-7f9c3cd38000 r--s 00019000 00:18 5083778                    /private/biu/packages/matlab/R2012b/java/jarext/scr.jar
+7f9c3cd38000-7f9c3cd3e000 r--s 00054000 00:18 5083777                    /private/biu/packages/matlab/R2012b/java/jarext/felix.jar
+7f9c3cd3e000-7f9c3cd40000 r--s 0001a000 00:18 5083757                    /private/biu/packages/matlab/R2012b/java/jarext/jgoodies-forms.jar
+7f9c3cd40000-7f9c3cd42000 r--s 0000d000 00:18 5083747                    /private/biu/packages/matlab/R2012b/java/jarext/commons-logging.jar
+7f9c3cd42000-7f9c3cd57000 r--s 000cb000 00:18 5326553                    /private/biu/packages/matlab/R2012b/java/jar/page.jar
+7f9c3cd57000-7f9c3cd62000 r--s 0006c000 00:18 5360074                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/matlab/guide.jar
+7f9c3cd62000-7f9c3cd64000 r--s 00011000 00:18 5326554                    /private/biu/packages/matlab/R2012b/java/jar/ide.jar
+7f9c3cd64000-7f9c3cd80000 r--s 0010e000 00:18 5326555                    /private/biu/packages/matlab/R2012b/java/jar/hg.jar
+7f9c3cd80000-7f9c3cde3000 r--s 00410000 00:18 5326556                    /private/biu/packages/matlab/R2012b/java/jar/mlwidgets.jar
+7f9c3cde3000-7f9c3cdeb000 r--s 00041000 00:18 5362300                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/testmeas.jar
+7f9c3cdeb000-7f9c3cded000 r--s 0000a000 00:18 5083744                    /private/biu/packages/matlab/R2012b/java/jarext/commons-codec.jar
+7f9c3cded000-7f9c3ce2c000 r--s 00198000 00:18 5362354                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/slproject.jar
+7f9c3ce2c000-7f9c3ce2e000 r--s 00019000 00:18 5326076                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/dws_client.jar
+7f9c3ce2e000-7f9c3ce32000 r--s 00029000 00:18 5326075                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/service_request_client.jar
+7f9c3ce32000-7f9c3ce35000 r--s 00011000 00:18 5326074                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/loginws_client.jar
+7f9c3ce35000-7f9c3ce3a000 r--s 00041000 00:18 5083743                    /private/biu/packages/matlab/R2012b/java/jarext/dws_client.jar
+7f9c3ce3a000-7f9c3ce41000 r--s 00076000 00:18 5083742                    /private/biu/packages/matlab/R2012b/java/jarext/mwaws_client.jar
+7f9c3ce41000-7f9c3ce4c000 r--s 0005c000 00:18 5362353                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/stateflow.jar
+7f9c3ce4c000-7f9c3ce55000 r--s 000fc000 00:18 6263996                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/h2.jar
+7f9c3ce55000-7f9c3ce5b000 r--s 00032000 00:18 5083891                    /private/biu/packages/matlab/R2012b/java/jarext/jaxen.jar
+7f9c3ce5b000-7f9c3ce63000 r--s 00053000 00:18 5083793                    /private/biu/packages/matlab/R2012b/java/jarext/jgoodies-looks.jar
+7f9c3ce63000-7f9c3ce6f000 r--s 00076000 00:18 5083965                    /private/biu/packages/matlab/R2012b/java/jarext/commons-collections-generic.jar
+7f9c3ce6f000-7f9c3ce7a000 r--s 0005e000 00:18 5083845                    /private/biu/packages/matlab/R2012b/java/jarext/webrenderer.jar
+7f9c3ce7a000-7f9c3ce80000 r--s 00025000 00:18 5326552                    /private/biu/packages/matlab/R2012b/java/jar/html.jar
+7f9c3ce80000-7f9c3ce87000 r--s 00033000 00:18 5362798                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/ecoder.jar
+7f9c3ce87000-7f9c3ce89000 r--s 0000b000 00:18 6263997                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/wrapper.jar
+7f9c3ce89000-7f9c3ce91000 r--s 00084000 00:18 5083802                    /private/biu/packages/matlab/R2012b/java/jarext/saxon.jar
+7f9c3ce91000-7f9c3ce95000 r--s 00026000 00:18 5326126                    /private/biu/packages/matlab/R2012b/java/jar/org/openide.jar
+7f9c3ce95000-7f9c3cead000 r--s 0012a000 00:18 5326122                    /private/biu/packages/matlab/R2012b/java/jar/org/netbeans.jar
+7f9c3cead000-7f9c3ceb9000 r--s 00087000 00:18 5326118                    /private/biu/packages/matlab/R2012b/java/jar/toolstrip.jar
+7f9c3ceb9000-7f9c3cebd000 r--s 0001b000 00:18 5326127                    /private/biu/packages/matlab/R2012b/java/jar/desktop.jar
+7f9c3cebd000-7f9c3cebe000 r--s 00004000 00:18 5326117                    /private/biu/packages/matlab/R2012b/java/jar/xml.jar
+7f9c3cebe000-7f9c3cec9000 r--s 00096000 00:18 5326119                    /private/biu/packages/matlab/R2012b/java/jar/mwt.jar
+7f9c3cec9000-7f9c3cecd000 r--s 00012000 00:18 5326120                    /private/biu/packages/matlab/R2012b/java/jar/beans.jar
+7f9c3cecd000-7f9c3cee0000 r--s 000ba000 00:18 5326125                    /private/biu/packages/matlab/R2012b/java/jar/mwswing.jar
+7f9c3cee0000-7f9c3cef3000 r--s 0011d000 00:18 5326124                    /private/biu/packages/matlab/R2012b/java/jar/common.jar
+7f9c3cef3000-7f9c3cefa000 r--s 0003a000 00:18 5326123                    /private/biu/packages/matlab/R2012b/java/jar/util.jar
+7f9c3cefa000-7f9c3cf12000 r--s 00470000 00:18 5081711                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9.jar
+7f9c3cf12000-7f9c3cf14000 r--s 00029000 00:18 5081723                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-xqj.jar
+7f9c3cf14000-7f9c3cf15000 r--s 0000a000 00:18 5081718                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-xpath.jar
+7f9c3cf15000-7f9c3cf17000 r--s 0000a000 00:18 5081708                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-xom.jar
+7f9c3cf17000-7f9c3cf19000 r--s 0000a000 00:18 5081721                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-sql.jar
+7f9c3cf19000-7f9c3cf1b000 r--s 0001b000 00:18 5081709                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-s9api.jar
+7f9c3cf1b000-7f9c3cf1c000 r--s 00007000 00:18 5081715                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-jdom.jar
+7f9c3cf1c000-7f9c3cf1d000 r--s 00007000 00:18 5081717                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-dom4j.jar
+7f9c3cf1d000-7f9c3cf1f000 r--s 0001a000 00:18 5081707                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-dom.jar
+7f9c3cf1f000-7f9c3cf20000 r--s 00005000 00:18 5081710                    /private/biu/packages/matlab/R2012b/java/jarext/saxon9-ant.jar
+7f9c3cf20000-7f9c3cf23000 r--s 0001f000 00:18 5326570                    /private/biu/packages/matlab/R2012b/java/jar/vrd.jar
+7f9c3cf23000-7f9c3cf24000 r--s 00005000 00:18 5326568                    /private/biu/packages/matlab/R2012b/java/jar/deactivation.jar
+7f9c3cf24000-7f9c3cf2f000 r--s 0005d000 00:18 5326569                    /private/biu/packages/matlab/R2012b/java/jar/activationclient.jar
+7f9c3cf2f000-7f9c3cf30000 r--s 00002000 00:18 5083791                    /private/biu/packages/matlab/R2012b/java/jarext/annotations.jar
+7f9c3cf30000-7f9c3cf37000 r--s 0002f000 00:18 5751624                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/shared/controllib.jar
+7f9c3cf37000-7f9c3cf3c000 r--s 00021000 00:18 5362349                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/dastudio.jar
+7f9c3cf3c000-7f9c3cf40000 r--s 00025000 00:18 5362410                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/comm.jar
+7f9c3cf40000-7f9c3cf42000 r--s 00018000 00:18 5083843                    /private/biu/packages/matlab/R2012b/java/jarext/nekohtml.jar
+7f9c3cf42000-7f9c3cf43000 r--s 00000000 00:18 6067239                    /private/biu/packages/matlab/R2012b/java/jar/physmod/simscape/simscape/preferences.jar
+7f9c3cf43000-7f9c3cf44000 r--s 00003000 00:18 6067240                    /private/biu/packages/matlab/R2012b/java/jar/physmod/simscape/simscape/editor.jar
+7f9c3cf44000-7f9c3cf45000 r--s 00001000 00:18 5362797                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/dsp.jar
+7f9c3cf45000-7f9c3cf47000 r--s 00013000 00:18 5362812                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/symbolic.jar
+7f9c3cf47000-7f9c3cf54000 r--s 0009f000 00:18 5342106                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/winpack.jar
+7f9c3cf54000-7f9c3cf55000 r--s 00003000 00:18 5342111                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/slf4j-log4j12.jar
+7f9c3cf55000-7f9c3cf56000 r--s 00006000 00:18 5342116                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/slf4j-api.jar
+7f9c3cf56000-7f9c3cf57000 r--s 00000000 00:18 5342107                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/runtime.jar
+7f9c3cf57000-7f9c3cf78000 r--s 000b2000 00:18 5342115                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/MozillaInterfaces.jar
+7f9c3cf78000-7f9c3cf85000 r--s 0006f000 00:18 5342109                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/jxbrowser.jar
+7f9c3cf85000-7f9c3cf91000 r--s 0004c000 00:18 5342108                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/engine-webkit.jar
+7f9c3cf91000-7f9c3cff7000 r--s 00523000 00:18 5342112                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/engine-ie.jar
+7f9c3cff7000-7f9c3d001000 r--s 0004d000 00:18 5342113                    /private/biu/packages/matlab/R2012b/java/jarext/jxbrowser/engine-gecko.jar
+7f9c3d001000-7f9c3d002000 r--s 00000000 00:18 5326053                    /private/biu/packages/matlab/R2012b/java/jar/foundation_libraries.jar
+7f9c3d002000-7f9c3d005000 r--s 00017000 00:18 5326558                    /private/biu/packages/matlab/R2012b/java/jar/appmanagement.jar
+7f9c3d005000-7f9c3d010000 r--s 0005a000 00:18 5083943                    /private/biu/packages/matlab/R2012b/java/jarext/xstream.jar
+7f9c3d010000-7f9c3d012000 r--s 00001000 00:18 6181818                    /private/biu/packages/matlab/R2012b/java/jarext/webservices/cloud_console/cloud-console-client.jar
+7f9c3d012000-7f9c3d01b000 r--s 00064000 00:18 5394368                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/jts.jar
+7f9c3d01b000-7f9c3d020000 r--s 0002f000 00:18 5394369                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-wms.jar
+7f9c3d020000-7f9c3d021000 r--s 00039000 00:18 5394372                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-referencing3D.jar
+7f9c3d021000-7f9c3d031000 r--s 00102000 00:18 5394374                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-referencing.jar
+7f9c3d031000-7f9c3d04c000 r--s 0017d000 00:18 5394375                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-main.jar
+7f9c3d04c000-7f9c3d051000 r--s 0005a000 00:18 5394370                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-coverage.jar
+7f9c3d051000-7f9c3d056000 r--s 00013000 00:18 5394373                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/gt2-api.jar
+7f9c3d056000-7f9c3d068000 r--s 00040000 00:18 5394371                    /private/biu/packages/matlab/R2012b/java/jarext/geotools/geoapi-nogenerics.jar
+7f9c3d068000-7f9c3d06b000 r--s 00013000 00:18 6263261                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/phoenix.jar
+7f9c3d06b000-7f9c3d06d000 r--s 0000b000 00:18 6263251                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/start.jar
+7f9c3d06d000-7f9c3d06e000 r--s 00005000 00:18 6263242                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/sharedvm.jar
+7f9c3d06e000-7f9c3d06f000 r--s 00000000 00:18 6263257                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/group-dl.jar
+7f9c3d06f000-7f9c3d071000 r--s 00005000 00:18 6263253                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/jsk-policy.jar
+7f9c3d071000-7f9c3d075000 r--s 00017000 00:18 6263264                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/sun-util.jar
+7f9c3d075000-7f9c3d077000 r--s 00007000 00:18 6263255                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/phoenix-group.jar
+7f9c3d077000-7f9c3d07c000 r--s 00039000 00:18 6263249                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/fiddler.jar
+7f9c3d07c000-7f9c3d081000 r--s 0003c000 00:18 6263246                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/reggie.jar
+7f9c3d081000-7f9c3d086000 r--s 0002e000 00:18 6263260                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/browser.jar
+7f9c3d086000-7f9c3d087000 r--s 00000000 00:18 6263254                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/phoenix-init.jar
+7f9c3d087000-7f9c3d089000 r--s 00001000 00:18 6263263                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/group.jar
+7f9c3d089000-7f9c3d08b000 r--s 00007000 00:18 6263258                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/mahalo-dl.jar
+7f9c3d08b000-7f9c3d090000 r--s 0003b000 00:18 6263250                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/norm.jar
+7f9c3d090000-7f9c3d091000 r--s 00000000 00:18 6263265                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/sdm-dl.jar
+7f9c3d091000-7f9c3d092000 r--s 00000000 00:18 6263244                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/browser-dl.jar
+7f9c3d092000-7f9c3d094000 r--s 0000a000 00:18 6263247                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/norm-dl.jar
+7f9c3d094000-7f9c3d097000 r--s 0000e000 00:18 6263248                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/reggie-dl.jar
+7f9c3d097000-7f9c3d09a000 r--s 0000b000 00:18 6263243                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/jini-core.jar
+7f9c3d09a000-7f9c3d0ac000 r--s 000d9000 00:18 6263259                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/jini-ext.jar
+7f9c3d0ac000-7f9c3d0ad000 r--s 00000000 00:18 6263266                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/jsk-resources.jar
+7f9c3d0ad000-7f9c3d0bd000 r--s 000bb000 00:18 6263245                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/jsk-platform.jar
+7f9c3d0bd000-7f9c3d0bf000 r--s 0000c000 00:18 6263267                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/destroy.jar
+7f9c3d0bf000-7f9c3d0c4000 r--s 00037000 00:18 6263262                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/mahalo.jar
+7f9c3d0c4000-7f9c3d0c6000 r--s 00004000 00:18 6263256                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/phoenix-dl.jar
+7f9c3d0c6000-7f9c3d0c8000 r--s 0000b000 00:18 6263252                    /private/biu/packages/matlab/R2012b/java/jarext/distcomp/jini2/lib/fiddler-dl.jar
+7f9c3d0c8000-7f9c3d0d2000 r--s 0004a000 00:18 5362800                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/imaq.jar
+7f9c3d0d2000-7f9c3d0da000 r--s 0003b000 00:18 5326101                    /private/biu/packages/matlab/R2012b/java/jar/install.jar
+7f9c3d0da000-7f9c3d0db000 r--s 00001000 00:18 6016414                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/idelink/extensions/armtoolchain.jar
+7f9c3d0db000-7f9c3d0df000 r--s 0001f000 00:18 6016431                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/idelink/extensions/eclipseide.jar
+7f9c3d0df000-7f9c3d0e3000 r--s 00031000 00:18 5326627                    /private/biu/packages/matlab/R2012b/java/jar/bde.jar
+7f9c3d0e3000-7f9c3d0ed000 r--s 0004d000 00:18 5362794                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/control.jar
+7f9c3d0ed000-7f9c3d0f2000 r--s 000e8000 00:18 5394377                    /private/biu/packages/matlab/R2012b/java/jar/physmod/powersys/drives.jar
+7f9c3d0f2000-7f9c3d0f5000 r--s 00025000 00:18 5083755                    /private/biu/packages/matlab/R2012b/java/jarext/commons-io.jar
+7f9c3d0f5000-7f9c3d0f6000 r--s 00004000 00:18 5326551                    /private/biu/packages/matlab/R2012b/java/jar/lmlogin.jar
+7f9c3d0f6000-7f9c3d0fd000 r--s 00049000 00:18 5362806                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/optim.jar
+7f9c3d0fd000-7f9c3d0ff000 r--s 00006000 00:18 5362809                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/rtw.jar
+7f9c3d0ff000-7f9c3d102000 r--s 00023000 00:18 5083827                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-xml.jar
+7f9c3d102000-7f9c3d104000 r--s 0000a000 00:18 5083823                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-util.jar
+7f9c3d104000-7f9c3d10c000 r--s 0003f000 00:18 5362391                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/sl3d.jar
+7f9c3d10c000-7f9c3d111000 r--s 00010000 00:18 5083901                    /private/biu/packages/matlab/R2012b/java/jarext/xml-apis-ext.jar
+7f9c3d111000-7f9c3d113000 r--s 0000f000 00:18 5083820                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-io.jar
+7f9c3d113000-7f9c3d117000 r--s 00033000 00:18 5083998                    /private/biu/packages/matlab/R2012b/java/jarext/jsch.jar
+7f9c3d117000-7f9c3d11b000 r--s 0002d000 00:18 5326571                    /private/biu/packages/matlab/R2012b/java/jar/activation.jar
+7f9c3d11b000-7f9c3d11c000 r--s 0000b000 00:18 5083796                    /private/biu/packages/matlab/R2012b/java/jarext/jxlayer.jar
+7f9c3d11c000-7f9c3d120000 r--s 00020000 00:18 5083750                    /private/biu/packages/matlab/R2012b/java/jarext/commons-compress.jar
+7f9c3d120000-7f9c3d12c000 r--s 00081000 00:18 5083786                    /private/biu/packages/matlab/R2012b/java/jarext/google-collect.jar
+7f9c3d12c000-7f9c3d12f000 r--s 00010000 00:18 5083849                    /private/biu/packages/matlab/R2012b/java/jarext/search.jar
+7f9c3d12f000-7f9c3d13f000 r--s 000a7000 00:18 5083760                    /private/biu/packages/matlab/R2012b/java/jarext/glazedlists_java15.jar
+7f9c3d13f000-7f9c3d14d000 r--s 00075000 00:18 5362810                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/slcontrol.jar
+7f9c3d14d000-7f9c3d157000 r--s 00081000 00:18 5083897                    /private/biu/packages/matlab/R2012b/java/jarext/xmlgraphics-commons.jar
+7f9c3d157000-7f9c3d16c000 r--s 001c5000 00:18 5083878                    /private/biu/packages/matlab/R2012b/java/jarext/antlr.jar
+7f9c3d16c000-7f9c3d16d000 r--s 00008000 00:18 5083960                    /private/biu/packages/matlab/R2012b/java/jarext/commons-cli.jar
+7f9c3d16d000-7f9c3d184000 r--s 00114000 00:18 5083765                    /private/biu/packages/matlab/R2012b/java/jarext/xercesImpl.jar
+7f9c3d184000-7f9c3d185000 r--s 00001000 00:18 5753074                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/shared/scomp.jar
+7f9c3d185000-7f9c3d1bc000 r--s 00237000 00:18 5326559                    /private/biu/packages/matlab/R2012b/java/jar/mde.jar
+7f9c3d1bc000-7f9c3d1c0000 r--s 00038000 00:18 5083752                    /private/biu/packages/matlab/R2012b/java/jarext/commons-lang.jar
+7f9c3d1c0000-7f9c3d1e2000 r--s 0015e000 00:18 5326578                    /private/biu/packages/matlab/R2012b/java/jar/webintegration.jar
+7f9c3d1e2000-7f9c3d1e5000 r--s 00010000 00:18 5362802                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/geoweb.jar
+7f9c3d1e5000-7f9c3d1f2000 r--s 0008d000 00:18 5362306                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/coder.jar
+7f9c3d1f2000-7f9c3d1f9000 r--s 00037000 00:18 5362352                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/eml.jar
+7f9c3d1f9000-7f9c3d1fc000 r--s 00031000 00:18 5342962                    /private/biu/packages/matlab/R2012b/java/jar/physmod/gui/core/swing.jar
+7f9c3d1fc000-7f9c3d1fe000 r--s 00001000 00:18 5342961                    /private/biu/packages/matlab/R2012b/java/jar/physmod/gui/core/util.jar
+7f9c3d1fe000-7f9c3d1ff000 r--s 00001000 00:18 5342960                    /private/biu/packages/matlab/R2012b/java/jar/physmod/gui/core/fwk.jar
+7f9c3d1ff000-7f9c3d200000 r--s 00000000 00:18 5342959                    /private/biu/packages/matlab/R2012b/java/jar/physmod/gui/core/exceptions.jar
+7f9c3d200000-7f9c3d203000 r--s 00020000 00:18 5083896                    /private/biu/packages/matlab/R2012b/java/jarext/openxml4j.jar
+7f9c3d203000-7f9c3d205000 r--s 0000a000 00:18 5083788                    /private/biu/packages/matlab/R2012b/java/jarext/jaccess-1_4.jar
+7f9c3d205000-7f9c3d206000 r--s 0000b000 00:18 5083790                    /private/biu/packages/matlab/R2012b/java/jarext/access-bridge.jar
+7f9c3d206000-7f9c3d20e000 r--s 00043000 00:18 5362813                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/ident.jar
+7f9c3d20e000-7f9c3d20f000 r--s 00002000 00:18 5083798                    /private/biu/packages/matlab/R2012b/java/jarext/tablelayout.jar
+7f9c3d20f000-7f9c3d212000 r--s 00010000 00:18 5326112                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-shortcut.jar
+7f9c3d212000-7f9c3d230000 r--s 00168000 00:18 5326116                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-grids.jar
+7f9c3d230000-7f9c3d23f000 r--s 00043000 00:18 5326114                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-properties.jar
+7f9c3d23f000-7f9c3d241000 r--s 0000c000 00:18 5326111                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-dialogs.jar
+7f9c3d241000-7f9c3d249000 r--s 00047000 00:18 5326115                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-components.jar
+7f9c3d249000-7f9c3d24f000 r--s 0004c000 00:18 5326113                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-dock.jar
+7f9c3d24f000-7f9c3d26b000 r--s 0013c000 00:18 5326110                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-common.jar
+7f9c3d26b000-7f9c3d270000 r--s 0002e000 00:18 5326109                    /private/biu/packages/matlab/R2012b/java/jarext/jide/jide-action.jar
+7f9c3d270000-7f9c3d272000 r--s 0000e000 00:18 5083833                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphics-base.jar
+7f9c3d272000-7f9c3d273000 r--s 00005000 00:18 5083829                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio-svg.jar
+7f9c3d273000-7f9c3d278000 r--s 00028000 00:18 5083832                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio-swf.jar
+7f9c3d278000-7f9c3d27a000 r--s 0000b000 00:18 5083834                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio-ps.jar
+7f9c3d27a000-7f9c3d27e000 r--s 00026000 00:18 5083830                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio-emf.jar
+7f9c3d27e000-7f9c3d281000 r--s 00010000 00:18 5083836                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio-pdf.jar
+7f9c3d281000-7f9c3d286000 r--s 00029000 00:18 5083837                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphicsio.jar
+7f9c3d286000-7f9c3d288000 r--s 0001d000 00:18 5083835                    /private/biu/packages/matlab/R2012b/java/jarext/freehep-graphics2d.jar
+7f9c3d288000-7f9c3d28d000 r--s 00021000 00:18 6244985                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/sdi/sdi.jar
+7f9c3d28d000-7f9c3d28e000 ---p 00000000 00:00 0 
+7f9c3d28e000-7f9c3d38e000 rwxp 00000000 00:00 0 
+7f9c3d38e000-7f9c3d391000 ---p 00000000 00:00 0 
+7f9c3d391000-7f9c3d48f000 rwxp 00000000 00:00 0 
+7f9c3d48f000-7f9c3d492000 ---p 00000000 00:00 0 
+7f9c3d492000-7f9c3d590000 rwxp 00000000 00:00 0 
+7f9c3d590000-7f9c3d593000 ---p 00000000 00:00 0 
+7f9c3d593000-7f9c3d691000 rwxp 00000000 00:00 0 
+7f9c3d691000-7f9c3d694000 ---p 00000000 00:00 0 
+7f9c3d694000-7f9c3d792000 rwxp 00000000 00:00 0 
+7f9c3d792000-7f9c3d795000 ---p 00000000 00:00 0 
+7f9c3d795000-7f9c3d893000 rwxp 00000000 00:00 0 
+7f9c3d893000-7f9c3d896000 ---p 00000000 00:00 0 
+7f9c3d896000-7f9c3d994000 rwxp 00000000 00:00 0 
+7f9c3d994000-7f9c3d995000 ---p 00000000 00:00 0 
+7f9c3d995000-7f9c3da95000 rwxp 00000000 00:00 0 
+7f9c3da95000-7f9c3dc2b000 r--s 02aa8000 00:18 5883394                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/rt.jar
+7f9c3dc2b000-7f9c3dc2c000 ---p 00000000 00:00 0 
+7f9c3dc2c000-7f9c3dd2c000 rwxp 00000000 00:00 0 
+7f9c3dd2c000-7f9c3dd2d000 ---p 00000000 00:00 0 
+7f9c3dd2d000-7f9c3de2d000 rwxp 00000000 00:00 0 
+7f9c3de2d000-7f9c3de2e000 ---p 00000000 00:00 0 
+7f9c3de2e000-7f9c3df2e000 rwxp 00000000 00:00 0 
+7f9c3df2e000-7f9c3df2f000 ---p 00000000 00:00 0 
+7f9c3df2f000-7f9c3e02f000 rwxp 00000000 00:00 0 
+7f9c3e02f000-7f9c3e030000 ---p 00000000 00:00 0 
+7f9c3e030000-7f9c3e130000 rwxp 00000000 00:00 0 
+7f9c3e130000-7f9c3e131000 ---p 00000000 00:00 0 
+7f9c3e131000-7f9c3e231000 rwxp 00000000 00:00 0 
+7f9c3e231000-7f9c3e232000 ---p 00000000 00:00 0 
+7f9c3e232000-7f9c3e332000 rwxp 00000000 00:00 0 
+7f9c3e332000-7f9c3e333000 ---p 00000000 00:00 0 
+7f9c3e333000-7f9c3e470000 rwxp 00000000 00:00 0 
+7f9c3e470000-7f9c3e473000 rwxp 00000000 00:00 0 
+7f9c3e473000-7f9c3e49c000 rwxp 00000000 00:00 0 
+7f9c3e49c000-7f9c3e4bd000 rwxp 00000000 00:00 0 
+7f9c3e4bd000-7f9c3e4fa000 rwxp 00000000 00:00 0 
+7f9c3e4fa000-7f9c3e4fd000 rwxp 00000000 00:00 0 
+7f9c3e4fd000-7f9c3e526000 rwxp 00000000 00:00 0 
+7f9c3e526000-7f9c3e546000 rwxp 00000000 00:00 0 
+7f9c3e546000-7f9c3e55d000 rwxp 00000000 00:00 0 
+7f9c3e55d000-7f9c3e55f000 rwxp 00000000 00:00 0 
+7f9c3e55f000-7f9c45e00000 rwxp 00000000 00:00 0 
+7f9c45e00000-7f9c46560000 rwxp 00000000 00:00 0 
+7f9c46560000-7f9c4b6e0000 rwxp 00000000 00:00 0 
+7f9c4b6e0000-7f9c4f860000 rwxp 00000000 00:00 0 
+7f9c4f860000-7f9c524a0000 rwxp 00000000 00:00 0 
+7f9c524a0000-7f9c52960000 rwxp 00000000 00:00 0 
+7f9c52960000-7f9c52961000 r--p 00000000 00:00 0 
+7f9c52961000-7f9c52962000 r--s 00000000 08:05 8260993                    /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le64.cache-3
+7f9c52962000-7f9c52964000 r--s 00007000 00:18 5083783                    /private/biu/packages/matlab/R2012b/java/jarext/foxtrot.jar
+7f9c52964000-7f9c5296c000 r--s 00048000 00:18 6275719                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-visualization.jar
+7f9c5296c000-7f9c52dac000 rwxp 00000000 00:00 0 
+7f9c52dac000-7f9c5596c000 rwxp 00000000 00:00 0 
+7f9c5596c000-7f9c5597a000 r-xp 00000000 00:18 6226590                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+7f9c5597a000-7f9c55a7c000 ---p 0000e000 00:18 6226590                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+7f9c55a7c000-7f9c55a7f000 rw-p 00010000 00:18 6226590                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libzip.so
+7f9c55a7f000-7f9c55a80000 rw-p 00000000 00:00 0 
+7f9c55a80000-7f9c55a87000 r-xp 00000000 00:18 6226703                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7f9c55a87000-7f9c55b88000 ---p 00007000 00:18 6226703                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7f9c55b88000-7f9c55b8a000 rw-p 00008000 00:18 6226703                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7f9c55b8a000-7f9c55b8b000 rw-p 00000000 00:00 0 
+7f9c55b8b000-7f9c55b9b000 r-xp 00000000 08:05 18615061                   /usr/lib/libXpm.so.4.11.0
+7f9c55b9b000-7f9c55d9a000 ---p 00010000 08:05 18615061                   /usr/lib/libXpm.so.4.11.0
+7f9c55d9a000-7f9c55d9b000 r--p 0000f000 08:05 18615061                   /usr/lib/libXpm.so.4.11.0
+7f9c55d9b000-7f9c55d9c000 rw-p 00010000 08:05 18615061                   /usr/lib/libXpm.so.4.11.0
+7f9c55d9c000-7f9c55da1000 r-xp 00000000 08:05 18613307                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f9c55da1000-7f9c55fa0000 ---p 00005000 08:05 18613307                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f9c55fa0000-7f9c55fa1000 r--p 00004000 08:05 18613307                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f9c55fa1000-7f9c55fa2000 rw-p 00005000 08:05 18613307                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f9c55fa2000-7f9c55fab000 r-xp 00000000 08:05 18612479                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f9c55fab000-7f9c561ab000 ---p 00009000 08:05 18612479                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f9c561ab000-7f9c561ac000 r--p 00009000 08:05 18612479                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f9c561ac000-7f9c561ad000 rw-p 0000a000 08:05 18612479                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f9c561ad000-7f9c561b6000 r-xp 00000000 08:05 18613269                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f9c561b6000-7f9c563b5000 ---p 00009000 08:05 18613269                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f9c563b5000-7f9c563b6000 r--p 00008000 08:05 18613269                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f9c563b6000-7f9c563b7000 rw-p 00009000 08:05 18613269                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f9c563b7000-7f9c563b8000 ---p 00000000 00:00 0 
+7f9c563b8000-7f9c56bb8000 rwxp 00000000 00:00 0 
+7f9c56bb8000-7f9c56bb9000 ---p 00000000 00:00 0 
+7f9c56bb9000-7f9c573b9000 rwxp 00000000 00:00 0 
+7f9c573b9000-7f9c573d0000 r-xp 00000000 08:05 23855411                   /lib/x86_64-linux-gnu/libresolv-2.13.so
+7f9c573d0000-7f9c575d0000 ---p 00017000 08:05 23855411                   /lib/x86_64-linux-gnu/libresolv-2.13.so
+7f9c575d0000-7f9c575d1000 r--p 00017000 08:05 23855411                   /lib/x86_64-linux-gnu/libresolv-2.13.so
+7f9c575d1000-7f9c575d2000 rw-p 00018000 08:05 23855411                   /lib/x86_64-linux-gnu/libresolv-2.13.so
+7f9c575d2000-7f9c575d4000 rw-p 00000000 00:00 0 
+7f9c575d4000-7f9c575da000 r-xp 00000000 08:05 23855348                   /lib/x86_64-linux-gnu/libnss_dns-2.13.so
+7f9c575da000-7f9c577d9000 ---p 00006000 08:05 23855348                   /lib/x86_64-linux-gnu/libnss_dns-2.13.so
+7f9c577d9000-7f9c577da000 r--p 00005000 08:05 23855348                   /lib/x86_64-linux-gnu/libnss_dns-2.13.so
+7f9c577da000-7f9c577db000 rw-p 00006000 08:05 23855348                   /lib/x86_64-linux-gnu/libnss_dns-2.13.so
+7f9c577db000-7f9c577dd000 r-xp 00000000 08:05 23857578                   /lib/libnss_mdns4_minimal.so.2
+7f9c577dd000-7f9c579dc000 ---p 00002000 08:05 23857578                   /lib/libnss_mdns4_minimal.so.2
+7f9c579dc000-7f9c579dd000 r--p 00001000 08:05 23857578                   /lib/libnss_mdns4_minimal.so.2
+7f9c579dd000-7f9c579de000 rw-p 00002000 08:05 23857578                   /lib/libnss_mdns4_minimal.so.2
+7f9c579de000-7f9c579ea000 r-xp 00000000 08:05 23855435                   /lib/x86_64-linux-gnu/libnss_files-2.13.so
+7f9c579ea000-7f9c57be9000 ---p 0000c000 08:05 23855435                   /lib/x86_64-linux-gnu/libnss_files-2.13.so
+7f9c57be9000-7f9c57bea000 r--p 0000b000 08:05 23855435                   /lib/x86_64-linux-gnu/libnss_files-2.13.so
+7f9c57bea000-7f9c57beb000 rw-p 0000c000 08:05 23855435                   /lib/x86_64-linux-gnu/libnss_files-2.13.so
+7f9c57beb000-7f9c57bf5000 r-xp 00000000 08:05 23855438                   /lib/x86_64-linux-gnu/libnss_nis-2.13.so
+7f9c57bf5000-7f9c57df5000 ---p 0000a000 08:05 23855438                   /lib/x86_64-linux-gnu/libnss_nis-2.13.so
+7f9c57df5000-7f9c57df6000 r--p 0000a000 08:05 23855438                   /lib/x86_64-linux-gnu/libnss_nis-2.13.so
+7f9c57df6000-7f9c57df7000 rw-p 0000b000 08:05 23855438                   /lib/x86_64-linux-gnu/libnss_nis-2.13.so
+7f9c57df7000-7f9c57dff000 r-xp 00000000 08:05 23855413                   /lib/x86_64-linux-gnu/libnss_compat-2.13.so
+7f9c57dff000-7f9c57ffe000 ---p 00008000 08:05 23855413                   /lib/x86_64-linux-gnu/libnss_compat-2.13.so
+7f9c57ffe000-7f9c57fff000 r--p 00007000 08:05 23855413                   /lib/x86_64-linux-gnu/libnss_compat-2.13.so
+7f9c57fff000-7f9c58000000 rw-p 00008000 08:05 23855413                   /lib/x86_64-linux-gnu/libnss_compat-2.13.so
+7f9c58000000-7f9c594d2000 rw-p 00000000 00:00 0 
+7f9c594d2000-7f9c594d3000 rwxp 00000000 00:00 0 
+7f9c594d3000-7f9c59c80000 rw-p 00000000 00:00 0 
+7f9c59c80000-7f9c59c82000 rwxp 00000000 00:00 0 
+7f9c59c82000-7f9c59c8e000 rw-p 00000000 00:00 0 
+7f9c59c8e000-7f9c59c90000 rwxp 00000000 00:00 0 
+7f9c59c90000-7f9c59d82000 rw-p 00000000 00:00 0 
+7f9c59d82000-7f9c59d83000 rwxp 00000000 00:00 0 
+7f9c59d83000-7f9c59f71000 rw-p 00000000 00:00 0 
+7f9c59f71000-7f9c59f72000 rwxp 00000000 00:00 0 
+7f9c59f72000-7f9c59f7d000 rw-p 00000000 00:00 0 
+7f9c59f7d000-7f9c59f7e000 rwxp 00000000 00:00 0 
+7f9c59f7e000-7f9c59f81000 rw-p 00000000 00:00 0 
+7f9c59f81000-7f9c59f83000 rwxp 00000000 00:00 0 
+7f9c59f83000-7f9c5a047000 rw-p 00000000 00:00 0 
+7f9c5a047000-7f9c5a048000 rwxp 00000000 00:00 0 
+7f9c5a048000-7f9c5a4f0000 rw-p 00000000 00:00 0 
+7f9c5a4f0000-7f9c5a4f1000 rwxp 00000000 00:00 0 
+7f9c5a4f1000-7f9c5a523000 rw-p 00000000 00:00 0 
+7f9c5a523000-7f9c5a524000 rwxp 00000000 00:00 0 
+7f9c5a524000-7f9c5a529000 rw-p 00000000 00:00 0 
+7f9c5a529000-7f9c5a52a000 rwxp 00000000 00:00 0 
+7f9c5a52a000-7f9c5a52d000 rw-p 00000000 00:00 0 
+7f9c5a52d000-7f9c5a52e000 rwxp 00000000 00:00 0 
+7f9c5a52e000-7f9c5a532000 rw-p 00000000 00:00 0 
+7f9c5a532000-7f9c5a534000 rwxp 00000000 00:00 0 
+7f9c5a534000-7f9c5a53b000 rw-p 00000000 00:00 0 
+7f9c5a53b000-7f9c5a53c000 rwxp 00000000 00:00 0 
+7f9c5a53c000-7f9c5a543000 rw-p 00000000 00:00 0 
+7f9c5a543000-7f9c5a544000 rwxp 00000000 00:00 0 
+7f9c5a544000-7f9c5a5e4000 rw-p 00000000 00:00 0 
+7f9c5a5e4000-7f9c5a5e7000 rwxp 00000000 00:00 0 
+7f9c5a5e7000-7f9c5a8d9000 rw-p 00000000 00:00 0 
+7f9c5a8d9000-7f9c5a8da000 rwxp 00000000 00:00 0 
+7f9c5a8da000-7f9c5a8e4000 rw-p 00000000 00:00 0 
+7f9c5a8e4000-7f9c5a8e5000 rwxp 00000000 00:00 0 
+7f9c5a8e5000-7f9c5a8f1000 rw-p 00000000 00:00 0 
+7f9c5a8f1000-7f9c5a8f2000 rwxp 00000000 00:00 0 
+7f9c5a8f2000-7f9c5a8fb000 rw-p 00000000 00:00 0 
+7f9c5a8fb000-7f9c5a8fc000 rwxp 00000000 00:00 0 
+7f9c5a8fc000-7f9c5a8fd000 rw-p 00000000 00:00 0 
+7f9c5a8fd000-7f9c5a8fe000 rwxp 00000000 00:00 0 
+7f9c5a8fe000-7f9c5a90a000 rw-p 00000000 00:00 0 
+7f9c5a90a000-7f9c5a90b000 rwxp 00000000 00:00 0 
+7f9c5a90b000-7f9c5a90d000 rw-p 00000000 00:00 0 
+7f9c5a90d000-7f9c5a90e000 rwxp 00000000 00:00 0 
+7f9c5a90e000-7f9c5a92a000 rw-p 00000000 00:00 0 
+7f9c5a92a000-7f9c5a92b000 rwxp 00000000 00:00 0 
+7f9c5a92b000-7f9c5a962000 rw-p 00000000 00:00 0 
+7f9c5a962000-7f9c5a963000 rwxp 00000000 00:00 0 
+7f9c5a963000-7f9c5a991000 rw-p 00000000 00:00 0 
+7f9c5a991000-7f9c5a993000 rwxp 00000000 00:00 0 
+7f9c5a993000-7f9c5a99d000 rw-p 00000000 00:00 0 
+7f9c5a99d000-7f9c5a99e000 rwxp 00000000 00:00 0 
+7f9c5a99e000-7f9c5a9a0000 rw-p 00000000 00:00 0 
+7f9c5a9a0000-7f9c5a9a4000 rwxp 00000000 00:00 0 
+7f9c5a9a4000-7f9c5a9a6000 rw-p 00000000 00:00 0 
+7f9c5a9a6000-7f9c5a9a7000 rwxp 00000000 00:00 0 
+7f9c5a9a7000-7f9c5a9a8000 rw-p 00000000 00:00 0 
+7f9c5a9a8000-7f9c5a9a9000 rwxp 00000000 00:00 0 
+7f9c5a9a9000-7f9c5a9af000 rw-p 00000000 00:00 0 
+7f9c5a9af000-7f9c5a9b0000 rwxp 00000000 00:00 0 
+7f9c5a9b0000-7f9c5a9c8000 rw-p 00000000 00:00 0 
+7f9c5a9c8000-7f9c5a9cb000 rwxp 00000000 00:00 0 
+7f9c5a9cb000-7f9c5b12e000 rw-p 00000000 00:00 0 
+7f9c5b12e000-7f9c5b12f000 rwxp 00000000 00:00 0 
+7f9c5b12f000-7f9c5b132000 rw-p 00000000 00:00 0 
+7f9c5b132000-7f9c5b133000 rwxp 00000000 00:00 0 
+7f9c5b133000-7f9c5b136000 rw-p 00000000 00:00 0 
+7f9c5b136000-7f9c5b137000 rwxp 00000000 00:00 0 
+7f9c5b137000-7f9c5b138000 rw-p 00000000 00:00 0 
+7f9c5b138000-7f9c5b13b000 rwxp 00000000 00:00 0 
+7f9c5b13b000-7f9c5b148000 rw-p 00000000 00:00 0 
+7f9c5b148000-7f9c5b149000 rwxp 00000000 00:00 0 
+7f9c5b149000-7f9c5b14a000 rw-p 00000000 00:00 0 
+7f9c5b14a000-7f9c5b14b000 rwxp 00000000 00:00 0 
+7f9c5b14b000-7f9c5b153000 rw-p 00000000 00:00 0 
+7f9c5b153000-7f9c5b155000 rwxp 00000000 00:00 0 
+7f9c5b155000-7f9c5b157000 rw-p 00000000 00:00 0 
+7f9c5b157000-7f9c5b15c000 rwxp 00000000 00:00 0 
+7f9c5b15c000-7f9c5b16e000 rw-p 00000000 00:00 0 
+7f9c5b16e000-7f9c5b170000 rwxp 00000000 00:00 0 
+7f9c5b170000-7f9c5b183000 rw-p 00000000 00:00 0 
+7f9c5b183000-7f9c5b184000 rwxp 00000000 00:00 0 
+7f9c5b184000-7f9c5b1d4000 rw-p 00000000 00:00 0 
+7f9c5b1d4000-7f9c5b1d5000 rwxp 00000000 00:00 0 
+7f9c5b1d5000-7f9c5b21a000 rw-p 00000000 00:00 0 
+7f9c5b21a000-7f9c5b21b000 rwxp 00000000 00:00 0 
+7f9c5b21b000-7f9c5b22b000 rw-p 00000000 00:00 0 
+7f9c5b22b000-7f9c5b22c000 rwxp 00000000 00:00 0 
+7f9c5b22c000-7f9c5b2af000 rw-p 00000000 00:00 0 
+7f9c5b2af000-7f9c5b2b0000 rwxp 00000000 00:00 0 
+7f9c5b2b0000-7f9c5b2b1000 rw-p 00000000 00:00 0 
+7f9c5b2b1000-7f9c5b2b2000 rwxp 00000000 00:00 0 
+7f9c5b2b2000-7f9c5b2fc000 rw-p 00000000 00:00 0 
+7f9c5b2fc000-7f9c5b2fe000 rwxp 00000000 00:00 0 
+7f9c5b2fe000-7f9c5b379000 rw-p 00000000 00:00 0 
+7f9c5b379000-7f9c5b37a000 rwxp 00000000 00:00 0 
+7f9c5b37a000-7f9c5b381000 rw-p 00000000 00:00 0 
+7f9c5b381000-7f9c5b382000 rwxp 00000000 00:00 0 
+7f9c5b382000-7f9c5b392000 rw-p 00000000 00:00 0 
+7f9c5b392000-7f9c5b395000 rwxp 00000000 00:00 0 
+7f9c5b395000-7f9c5b397000 rw-p 00000000 00:00 0 
+7f9c5b397000-7f9c5b398000 rwxp 00000000 00:00 0 
+7f9c5b398000-7f9c5b3ca000 rw-p 00000000 00:00 0 
+7f9c5b3ca000-7f9c5b3cb000 rwxp 00000000 00:00 0 
+7f9c5b3cb000-7f9c5b3d5000 rw-p 00000000 00:00 0 
+7f9c5b3d5000-7f9c5b3d6000 rwxp 00000000 00:00 0 
+7f9c5b3d6000-7f9c5b3e3000 rw-p 00000000 00:00 0 
+7f9c5b3e3000-7f9c5b3e6000 rwxp 00000000 00:00 0 
+7f9c5b3e6000-7f9c5b3f5000 rw-p 00000000 00:00 0 
+7f9c5b3f5000-7f9c5b3f6000 rwxp 00000000 00:00 0 
+7f9c5b3f6000-7f9c5b420000 rw-p 00000000 00:00 0 
+7f9c5b420000-7f9c5b421000 rwxp 00000000 00:00 0 
+7f9c5b421000-7f9c5b483000 rw-p 00000000 00:00 0 
+7f9c5b483000-7f9c5b484000 rwxp 00000000 00:00 0 
+7f9c5b484000-7f9c5b485000 rw-p 00000000 00:00 0 
+7f9c5b485000-7f9c5b487000 rwxp 00000000 00:00 0 
+7f9c5b487000-7f9c5b489000 rw-p 00000000 00:00 0 
+7f9c5b489000-7f9c5b48a000 rwxp 00000000 00:00 0 
+7f9c5b48a000-7f9c5b48d000 rw-p 00000000 00:00 0 
+7f9c5b48d000-7f9c5b48e000 rwxp 00000000 00:00 0 
+7f9c5b48e000-7f9c5b48f000 rw-p 00000000 00:00 0 
+7f9c5b48f000-7f9c5b490000 rwxp 00000000 00:00 0 
+7f9c5b490000-7f9c5b494000 rw-p 00000000 00:00 0 
+7f9c5b494000-7f9c5b495000 rwxp 00000000 00:00 0 
+7f9c5b495000-7f9c5b496000 rw-p 00000000 00:00 0 
+7f9c5b496000-7f9c5b497000 rwxp 00000000 00:00 0 
+7f9c5b497000-7f9c5b499000 rw-p 00000000 00:00 0 
+7f9c5b499000-7f9c5b49d000 rwxp 00000000 00:00 0 
+7f9c5b49d000-7f9c5b4af000 rw-p 00000000 00:00 0 
+7f9c5b4af000-7f9c5b4b0000 rwxp 00000000 00:00 0 
+7f9c5b4b0000-7f9c5b4e1000 rw-p 00000000 00:00 0 
+7f9c5b4e1000-7f9c5b4e2000 rwxp 00000000 00:00 0 
+7f9c5b4e2000-7f9c5b4fd000 rw-p 00000000 00:00 0 
+7f9c5b4fd000-7f9c5b4ff000 rwxp 00000000 00:00 0 
+7f9c5b4ff000-7f9c5b506000 rw-p 00000000 00:00 0 
+7f9c5b506000-7f9c5b507000 rwxp 00000000 00:00 0 
+7f9c5b507000-7f9c5b538000 rw-p 00000000 00:00 0 
+7f9c5b538000-7f9c5b539000 rwxp 00000000 00:00 0 
+7f9c5b539000-7f9c5b53a000 rw-p 00000000 00:00 0 
+7f9c5b53a000-7f9c5b53b000 rwxp 00000000 00:00 0 
+7f9c5b53b000-7f9c5b568000 rw-p 00000000 00:00 0 
+7f9c5b568000-7f9c5b569000 rwxp 00000000 00:00 0 
+7f9c5b569000-7f9c5b5d7000 rw-p 00000000 00:00 0 
+7f9c5b5d7000-7f9c5b5d8000 rwxp 00000000 00:00 0 
+7f9c5b5d8000-7f9c5b5ee000 rw-p 00000000 00:00 0 
+7f9c5b5ee000-7f9c5b5ef000 rwxp 00000000 00:00 0 
+7f9c5b5ef000-7f9c5b5f3000 rw-p 00000000 00:00 0 
+7f9c5b5f3000-7f9c5b5f4000 rwxp 00000000 00:00 0 
+7f9c5b5f4000-7f9c5b5f8000 rw-p 00000000 00:00 0 
+7f9c5b5f8000-7f9c5b5f9000 rwxp 00000000 00:00 0 
+7f9c5b5f9000-7f9c5b5fa000 rw-p 00000000 00:00 0 
+7f9c5b5fa000-7f9c5b5fb000 rwxp 00000000 00:00 0 
+7f9c5b5fb000-7f9c5b60a000 rw-p 00000000 00:00 0 
+7f9c5b60a000-7f9c5b60b000 rwxp 00000000 00:00 0 
+7f9c5b60b000-7f9c5b626000 rw-p 00000000 00:00 0 
+7f9c5b626000-7f9c5b627000 rwxp 00000000 00:00 0 
+7f9c5b627000-7f9c5b629000 rw-p 00000000 00:00 0 
+7f9c5b629000-7f9c5b62b000 rwxp 00000000 00:00 0 
+7f9c5b62b000-7f9c5b637000 rw-p 00000000 00:00 0 
+7f9c5b637000-7f9c5b638000 rwxp 00000000 00:00 0 
+7f9c5b638000-7f9c5b640000 rw-p 00000000 00:00 0 
+7f9c5b640000-7f9c5b644000 rwxp 00000000 00:00 0 
+7f9c5b644000-7f9c5b660000 rw-p 00000000 00:00 0 
+7f9c5b660000-7f9c5b662000 rwxp 00000000 00:00 0 
+7f9c5b662000-7f9c5b79e000 rw-p 00000000 00:00 0 
+7f9c5b79e000-7f9c5c000000 ---p 00000000 00:00 0 
+7f9c5c000000-7f9c5c001000 r--s 00000000 08:05 8260804                    /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-3
+7f9c5c001000-7f9c5c002000 r--s 00000000 08:05 8260743                    /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le64.cache-3
+7f9c5c002000-7f9c5c003000 r--s 00000000 08:05 8262143                    /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-3
+7f9c5c003000-7f9c5c004000 r--s 00004000 00:18 6275725                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-jai.jar
+7f9c5c004000-7f9c5c007000 r--s 00011000 00:18 6275721                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-io.jar
+7f9c5c007000-7f9c5c009000 r--s 0000e000 00:18 6275726                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-graph-impl.jar
+7f9c5c009000-7f9c5c00c000 r--s 00008000 00:18 6275720                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-api.jar
+7f9c5c00c000-7f9c5c01d000 rwxp 00000000 00:00 0 
+7f9c5c01d000-7f9c5c0cc000 rwxp 00000000 00:00 0 
+7f9c5c0cc000-7f9c5c10d000 rw-p 00000000 00:00 0 
+7f9c5c10d000-7f9c5c124000 r-xp 00000000 08:05 23855409                   /lib/x86_64-linux-gnu/libnsl-2.13.so
+7f9c5c124000-7f9c5c323000 ---p 00017000 08:05 23855409                   /lib/x86_64-linux-gnu/libnsl-2.13.so
+7f9c5c323000-7f9c5c324000 r--p 00016000 08:05 23855409                   /lib/x86_64-linux-gnu/libnsl-2.13.so
+7f9c5c324000-7f9c5c325000 rw-p 00017000 08:05 23855409                   /lib/x86_64-linux-gnu/libnsl-2.13.so
+7f9c5c325000-7f9c5c327000 rw-p 00000000 00:00 0 
+7f9c5c327000-7f9c5c334000 r-xp 00000000 00:18 6226710                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+7f9c5c334000-7f9c5c433000 ---p 0000d000 00:18 6226710                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+7f9c5c433000-7f9c5c436000 rw-p 0000c000 00:18 6226710                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libverify.so
+7f9c5c436000-7f9c5cb94000 r-xp 00000000 00:18 6226725                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+7f9c5cb94000-7f9c5cc93000 ---p 0075e000 00:18 6226725                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+7f9c5cc93000-7f9c5ce0b000 rw-p 0075d000 00:18 6226725                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so
+7f9c5ce0b000-7f9c5ce49000 rw-p 00000000 00:00 0 
+7f9c5ce49000-7f9c5ce72000 r-xp 00000000 00:18 6226617                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+7f9c5ce72000-7f9c5cf71000 ---p 00029000 00:18 6226617                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+7f9c5cf71000-7f9c5cf78000 rw-p 00028000 00:18 6226617                    /private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/libjava.so
+7f9c5cf78000-7f9c5cf7b000 ---p 00000000 00:00 0 
+7f9c5cf7b000-7f9c5d779000 rwxp 00000000 00:00 0 
+7f9c5d779000-7f9c5d77c000 ---p 00000000 00:00 0 
+7f9c5d77c000-7f9c5df7a000 rwxp 00000000 00:00 0 
+7f9c5df7a000-7f9c5e09a000 rw-p 00000000 00:00 0 
+7f9c5e09a000-7f9c5e09b000 ---p 00000000 00:00 0 
+7f9c5e09b000-7f9c5e86b000 rwxp 00000000 00:00 0 
+7f9c5e86b000-7f9c5edef000 r--p 00000000 08:05 18612367                   /usr/lib/locale/locale-archive
+7f9c5edef000-7f9c5edf5000 r-xp 00000000 00:18 5444291                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcolamd.so
+7f9c5edf5000-7f9c5eff4000 ---p 00006000 00:18 5444291                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcolamd.so
+7f9c5eff4000-7f9c5eff5000 rw-p 00005000 00:18 5444291                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcolamd.so
+7f9c5eff5000-7f9c5effd000 r-xp 00000000 00:18 5444287                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwamd.so
+7f9c5effd000-7f9c5f1fc000 ---p 00008000 00:18 5444287                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwamd.so
+7f9c5f1fc000-7f9c5f1fd000 rw-p 00007000 00:18 5444287                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwamd.so
+7f9c5f1fd000-7f9c5f202000 r-xp 00000000 08:05 18613675                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f9c5f202000-7f9c5f401000 ---p 00005000 08:05 18613675                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f9c5f401000-7f9c5f402000 r--p 00004000 08:05 18613675                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f9c5f402000-7f9c5f403000 rw-p 00005000 08:05 18613675                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f9c5f403000-7f9c5f405000 r-xp 00000000 08:05 18613644                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f9c5f405000-7f9c5f604000 ---p 00002000 08:05 18613644                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f9c5f604000-7f9c5f605000 r--p 00001000 08:05 18613644                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f9c5f605000-7f9c5f606000 rw-p 00002000 08:05 18613644                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f9c5f606000-7f9c5f60a000 r-xp 00000000 08:05 23855138                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f9c5f60a000-7f9c5f809000 ---p 00004000 08:05 23855138                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f9c5f809000-7f9c5f80a000 r--p 00003000 08:05 23855138                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f9c5f80a000-7f9c5f80b000 rw-p 00004000 08:05 23855138                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7f9c5f80b000-7f9c5f84d000 r-xp 00000000 00:18 5444292                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcholmod.so
+7f9c5f84d000-7f9c5fa4d000 ---p 00042000 00:18 5444292                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcholmod.so
+7f9c5fa4d000-7f9c5fa4e000 rw-p 00042000 00:18 5444292                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcholmod.so
+7f9c5fa4e000-7f9c5fa60000 r-xp 00000000 00:18 5444284                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwblas.so
+7f9c5fa60000-7f9c5fc5f000 ---p 00012000 00:18 5444284                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwblas.so
+7f9c5fc5f000-7f9c5fc61000 rw-p 00011000 00:18 5444284                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwblas.so
+7f9c5fc61000-7f9c5fc7c000 r-xp 00000000 08:05 18613679                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f9c5fc7c000-7f9c5fe7b000 ---p 0001b000 08:05 18613679                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f9c5fe7b000-7f9c5fe7c000 r--p 0001a000 08:05 18613679                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f9c5fe7c000-7f9c5fe7d000 rw-p 0001b000 08:05 18613679                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f9c5fe7d000-7f9c5fe93000 r-xp 00000000 08:05 18614294                   /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0
+7f9c5fe93000-7f9c60092000 ---p 00016000 08:05 18614294                   /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0
+7f9c60092000-7f9c60093000 r--p 00015000 08:05 18614294                   /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0
+7f9c60093000-7f9c60094000 rw-p 00016000 08:05 18614294                   /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0
+7f9c60094000-7f9c60097000 rw-p 00000000 00:00 0 
+7f9c60097000-7f9c6009e000 r-xp 00000000 08:05 18614573                   /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1
+7f9c6009e000-7f9c6029d000 ---p 00007000 08:05 18614573                   /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1
+7f9c6029d000-7f9c6029e000 r--p 00006000 08:05 18614573                   /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1
+7f9c6029e000-7f9c6029f000 rw-p 00007000 08:05 18614573                   /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1
+7f9c6029f000-7f9c602b6000 r-xp 00000000 08:05 18615026                   /usr/lib/libXmu.so.6.2.0
+7f9c602b6000-7f9c604b6000 ---p 00017000 08:05 18615026                   /usr/lib/libXmu.so.6.2.0
+7f9c604b6000-7f9c604b7000 r--p 00017000 08:05 18615026                   /usr/lib/libXmu.so.6.2.0
+7f9c604b7000-7f9c604b8000 rw-p 00018000 08:05 18615026                   /usr/lib/libXmu.so.6.2.0
+7f9c604b8000-7f9c604bc000 r-xp 00000000 00:18 5444279                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwompwrapper.so
+7f9c604bc000-7f9c606bc000 ---p 00004000 00:18 5444279                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwompwrapper.so
+7f9c606bc000-7f9c606bd000 rw-p 00004000 00:18 5444279                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwompwrapper.so
+7f9c606bd000-7f9c606c4000 r-xp 00000000 00:18 5444278                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbinder.so
+7f9c606c4000-7f9c608c4000 ---p 00007000 00:18 5444278                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbinder.so
+7f9c608c4000-7f9c608c5000 rw-p 00007000 00:18 5444278                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbinder.so
+7f9c608c5000-7f9c6098d000 r-xp 00000000 00:18 5444302                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathcore.so
+7f9c6098d000-7f9c60b8d000 ---p 000c8000 00:18 5444302                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathcore.so
+7f9c60b8d000-7f9c60b91000 rw-p 000c8000 00:18 5444302                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathcore.so
+7f9c60b91000-7f9c60b92000 rw-p 00000000 00:00 0 
+7f9c60b92000-7f9c60b9b000 r-xp 00000000 00:18 5444274                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_rng.so
+7f9c60b9b000-7f9c60d9b000 ---p 00009000 00:18 5444274                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_rng.so
+7f9c60d9b000-7f9c60d9c000 rw-p 00009000 00:18 5444274                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_rng.so
+7f9c60d9c000-7f9c61021000 r-xp 00000000 00:18 5444230                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5.so.6.0.5
+7f9c61021000-7f9c61221000 ---p 00285000 00:18 5444230                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5.so.6.0.5
+7f9c61221000-7f9c6122c000 rw-p 00285000 00:18 5444230                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5.so.6.0.5
+7f9c6122c000-7f9c6122d000 rw-p 00000000 00:00 0 
+7f9c6122d000-7f9c61248000 r-xp 00000000 00:18 5444231                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5_hl.so.6.0.5
+7f9c61248000-7f9c61447000 ---p 0001b000 00:18 5444231                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5_hl.so.6.0.5
+7f9c61447000-7f9c61448000 rw-p 0001a000 00:18 5444231                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libhdf5_hl.so.6.0.5
+7f9c61448000-7f9c61459000 rw-p 00000000 00:00 0 
+7f9c61459000-7f9c6145e000 r-xp 00000000 00:18 5444364                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuinone.so
+7f9c6145e000-7f9c6165e000 ---p 00005000 00:18 5444364                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuinone.so
+7f9c6165e000-7f9c6165f000 rw-p 00005000 00:18 5444364                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuinone.so
+7f9c6165f000-7f9c6166f000 r-xp 00000000 00:18 5444331                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlib.so
+7f9c6166f000-7f9c6186f000 ---p 00010000 00:18 5444331                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlib.so
+7f9c6186f000-7f9c61871000 rw-p 00010000 00:18 5444331                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlib.so
+7f9c61871000-7f9c619a4000 r-xp 00000000 08:05 18613694                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f9c619a4000-7f9c61ba4000 ---p 00133000 08:05 18613694                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f9c61ba4000-7f9c61ba5000 r--p 00133000 08:05 18613694                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f9c61ba5000-7f9c61ba9000 rw-p 00134000 08:05 18613694                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f9c61ba9000-7f9c61c08000 r-xp 00000000 08:05 18615028                   /usr/lib/x86_64-linux-gnu/libXt.so.6.0.0
+7f9c61c08000-7f9c61e07000 ---p 0005f000 08:05 18615028                   /usr/lib/x86_64-linux-gnu/libXt.so.6.0.0
+7f9c61e07000-7f9c61e08000 r--p 0005e000 08:05 18615028                   /usr/lib/x86_64-linux-gnu/libXt.so.6.0.0
+7f9c61e08000-7f9c61e0d000 rw-p 0005f000 08:05 18615028                   /usr/lib/x86_64-linux-gnu/libXt.so.6.0.0
+7f9c61e0d000-7f9c61e0e000 rw-p 00000000 00:00 0 
+7f9c61e0e000-7f9c61e20000 r-xp 00000000 08:05 18612267                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f9c61e20000-7f9c6201f000 ---p 00012000 08:05 18612267                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f9c6201f000-7f9c62020000 r--p 00011000 08:05 18612267                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f9c62020000-7f9c62021000 rw-p 00012000 08:05 18612267                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f9c62021000-7f9c622a2000 r-xp 00000000 00:18 5459951                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libXm.so.3.0.2
+7f9c622a2000-7f9c624a2000 ---p 00281000 00:18 5459951                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libXm.so.3.0.2
+7f9c624a2000-7f9c624cc000 rw-p 00281000 00:18 5459951                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libXm.so.3.0.2
+7f9c624cc000-7f9c624cd000 rw-p 00000000 00:00 0 
+7f9c624cd000-7f9c624dd000 r-xp 00000000 00:18 5444348                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbt.so
+7f9c624dd000-7f9c626dc000 ---p 00010000 00:18 5444348                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbt.so
+7f9c626dc000-7f9c626de000 rw-p 0000f000 00:18 5444348                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbt.so
+7f9c626de000-7f9c6270f000 r-xp 00000000 00:18 5444336                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbtutils.so
+7f9c6270f000-7f9c6290e000 ---p 00031000 00:18 5444336                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbtutils.so
+7f9c6290e000-7f9c62914000 rw-p 00030000 00:18 5444336                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgbtutils.so
+7f9c62914000-7f9c629c5000 r-xp 00000000 00:18 5444283                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwlapack.so
+7f9c629c5000-7f9c62bc4000 ---p 000b1000 00:18 5444283                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwlapack.so
+7f9c62bc4000-7f9c62bce000 rw-p 000b0000 00:18 5444283                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwlapack.so
+7f9c62bce000-7f9c62e82000 r-xp 00000000 00:18 5444338                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgdatatypes.so
+7f9c62e82000-7f9c63081000 ---p 002b4000 00:18 5444338                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgdatatypes.so
+7f9c63081000-7f9c630a2000 rw-p 002b3000 00:18 5444338                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgdatatypes.so
+7f9c630a2000-7f9c630a4000 rw-p 00000000 00:00 0 
+7f9c630a4000-7f9c630f4000 r-xp 00000000 00:18 5444347                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libuij.so
+7f9c630f4000-7f9c632f3000 ---p 00050000 00:18 5444347                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libuij.so
+7f9c632f3000-7f9c632f7000 rw-p 0004f000 00:18 5444347                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libuij.so
+7f9c632f7000-7f9c6332b000 r-xp 00000000 00:18 5444366                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhardcopy.so
+7f9c6332b000-7f9c6352a000 ---p 00034000 00:18 5444366                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhardcopy.so
+7f9c6352a000-7f9c6352c000 rw-p 00033000 00:18 5444366                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhardcopy.so
+7f9c6352c000-7f9c6352d000 rw-p 00000000 00:00 0 
+7f9c6352d000-7f9c6353c000 r-xp 00000000 00:18 5444350                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgraphics_util.so
+7f9c6353c000-7f9c6373c000 ---p 0000f000 00:18 5444350                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgraphics_util.so
+7f9c6373c000-7f9c6373e000 rw-p 0000f000 00:18 5444350                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgraphics_util.so
+7f9c6373e000-7f9c6374c000 r-xp 00000000 00:18 5444345                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmtok.so
+7f9c6374c000-7f9c6394b000 ---p 0000e000 00:18 5444345                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmtok.so
+7f9c6394b000-7f9c6394c000 rw-p 0000d000 00:18 5444345                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmtok.so
+7f9c6394c000-7f9c63961000 r-xp 00000000 00:18 5444346                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwir_xfmr.so
+7f9c63961000-7f9c63b61000 ---p 00015000 00:18 5444346                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwir_xfmr.so
+7f9c63b61000-7f9c63b62000 rw-p 00015000 00:18 5444346                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwir_xfmr.so
+7f9c63b62000-7f9c63b84000 r-xp 00000000 08:05 23855590                   /lib/libtinfo.so.5.9
+7f9c63b84000-7f9c63d84000 ---p 00022000 08:05 23855590                   /lib/libtinfo.so.5.9
+7f9c63d84000-7f9c63d88000 r--p 00022000 08:05 23855590                   /lib/libtinfo.so.5.9
+7f9c63d88000-7f9c63d89000 rw-p 00026000 08:05 23855590                   /lib/libtinfo.so.5.9
+7f9c63d89000-7f9c63e03000 r-xp 00000000 00:18 5444264                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspmatrix.so
+7f9c63e03000-7f9c64002000 ---p 0007a000 00:18 5444264                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspmatrix.so
+7f9c64002000-7f9c64004000 rw-p 00079000 00:18 5444264                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwspmatrix.so
+7f9c64004000-7f9c64029000 r-xp 00000000 00:18 5444344                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodegen.so
+7f9c64029000-7f9c64229000 ---p 00025000 00:18 5444344                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodegen.so
+7f9c64229000-7f9c6422b000 rw-p 00025000 00:18 5444344                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodegen.so
+7f9c6422b000-7f9c64244000 r-xp 00000000 00:18 5444359                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodeio.so
+7f9c64244000-7f9c64443000 ---p 00019000 00:18 5444359                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodeio.so
+7f9c64443000-7f9c64445000 rw-p 00018000 00:18 5444359                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_pcodeio.so
+7f9c64445000-7f9c6446d000 r-xp 00000000 00:18 5444303                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathrng.so
+7f9c6446d000-7f9c6466c000 ---p 00028000 00:18 5444303                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathrng.so
+7f9c6466c000-7f9c6466f000 rw-p 00027000 00:18 5444303                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathrng.so
+7f9c6466f000-7f9c64670000 rw-p 00000000 00:00 0 
+7f9c64670000-7f9c64734000 r-xp 00000000 00:18 5444290                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathutil.so
+7f9c64734000-7f9c64934000 ---p 000c4000 00:18 5444290                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathutil.so
+7f9c64934000-7f9c64935000 rw-p 000c4000 00:18 5444290                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmathutil.so
+7f9c64935000-7f9c64971000 r-xp 00000000 00:18 5444365                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwprofiler.so
+7f9c64971000-7f9c64b70000 ---p 0003c000 00:18 5444365                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwprofiler.so
+7f9c64b70000-7f9c64b73000 rw-p 0003b000 00:18 5444365                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwprofiler.so
+7f9c64b73000-7f9c64bc0000 r-xp 00000000 00:18 5444243                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmat.so
+7f9c64bc0000-7f9c64dbf000 ---p 0004d000 00:18 5444243                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmat.so
+7f9c64dbf000-7f9c64dc3000 rw-p 0004c000 00:18 5444243                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmat.so
+7f9c64dc3000-7f9c64e3b000 r-xp 00000000 00:18 5444250                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwxmlcore.so
+7f9c64e3b000-7f9c6503a000 ---p 00078000 00:18 5444250                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwxmlcore.so
+7f9c6503a000-7f9c65042000 rw-p 00077000 00:18 5444250                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwxmlcore.so
+7f9c65042000-7f9c65043000 rw-p 00000000 00:00 0 
+7f9c65043000-7f9c65058000 r-xp 00000000 00:18 5444216                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_iostreams.so.1.44.0
+7f9c65058000-7f9c65258000 ---p 00015000 00:18 5444216                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_iostreams.so.1.44.0
+7f9c65258000-7f9c6525a000 rw-p 00015000 00:18 5444216                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_iostreams.so.1.44.0
+7f9c6525a000-7f9c653d4000 r-xp 00000000 00:18 5444363                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuix.so
+7f9c653d4000-7f9c655d4000 ---p 0017a000 00:18 5444363                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuix.so
+7f9c655d4000-7f9c655e9000 rw-p 0017a000 00:18 5444363                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwuix.so
+7f9c655e9000-7f9c655ee000 rw-p 00000000 00:00 0 
+7f9c655ee000-7f9c6564e000 r-xp 00000000 00:18 5444349                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_ir.so
+7f9c6564e000-7f9c6584d000 ---p 00060000 00:18 5444349                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_ir.so
+7f9c6584d000-7f9c65856000 rw-p 0005f000 00:18 5444349                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_ir.so
+7f9c65856000-7f9c65901000 r-xp 00000000 00:18 5444368                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd_mi.so
+7f9c65901000-7f9c65b01000 ---p 000ab000 00:18 5444368                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd_mi.so
+7f9c65b01000-7f9c65b0d000 rw-p 000ab000 00:18 5444368                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd_mi.so
+7f9c65b0d000-7f9c65b0e000 rw-p 00000000 00:00 0 
+7f9c65b0e000-7f9c65c7b000 r-xp 00000000 00:18 5444353                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgutils.so
+7f9c65c7b000-7f9c65e7a000 ---p 0016d000 00:18 5444353                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgutils.so
+7f9c65e7a000-7f9c65e93000 rw-p 0016c000 00:18 5444353                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhgutils.so
+7f9c65e93000-7f9c66d78000 r-xp 00000000 00:18 5444330                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhg.so
+7f9c66d78000-7f9c66f77000 ---p 00ee5000 00:18 5444330                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhg.so
+7f9c66f77000-7f9c67099000 rw-p 00ee4000 00:18 5444330                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwhg.so
+7f9c67099000-7f9c670a6000 rw-p 00000000 00:00 0 
+7f9c670a6000-7f9c671b6000 r-xp 00000000 00:18 5444342                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgui.so
+7f9c671b6000-7f9c673b5000 ---p 00110000 00:18 5444342                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgui.so
+7f9c673b5000-7f9c673f2000 rw-p 0010f000 00:18 5444342                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwgui.so
+7f9c673f2000-7f9c674d8000 r-xp 00000000 00:18 5444339                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd.so
+7f9c674d8000-7f9c676d7000 ---p 000e6000 00:18 5444339                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd.so
+7f9c676d7000-7f9c676ee000 rw-p 000e5000 00:18 5444339                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwudd.so
+7f9c676ee000-7f9c676f1000 rw-p 00000000 00:00 0 
+7f9c676f1000-7f9c6797c000 r-xp 00000000 00:18 5444343                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_parser.so
+7f9c6797c000-7f9c67b7c000 ---p 0028b000 00:18 5444343                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_parser.so
+7f9c67b7c000-7f9c68020000 rw-p 0028b000 00:18 5444343                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_parser.so
+7f9c68020000-7f9c68041000 r-xp 00000000 00:18 5444358                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmex.so
+7f9c68041000-7f9c68241000 ---p 00021000 00:18 5444358                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmex.so
+7f9c68241000-7f9c68243000 rw-p 00021000 00:18 5444358                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmex.so
+7f9c68243000-7f9c68274000 r-xp 00000000 00:18 5444341                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbridge.so
+7f9c68274000-7f9c68473000 ---p 00031000 00:18 5444341                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbridge.so
+7f9c68473000-7f9c68476000 rw-p 00030000 00:18 5444341                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwbridge.so
+7f9c68476000-7f9c6847c000 rw-p 00000000 00:00 0 
+7f9c6847c000-7f9c68703000 r-xp 00000000 00:18 5444354                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcos.so
+7f9c68703000-7f9c68902000 ---p 00287000 00:18 5444354                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcos.so
+7f9c68902000-7f9c6892e000 rw-p 00286000 00:18 5444354                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcos.so
+7f9c6892e000-7f9c6892f000 r-xp 00000000 00:18 5444260                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwnativejava_services.so
+7f9c6892f000-7f9c68b2f000 ---p 00001000 00:18 5444260                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwnativejava_services.so
+7f9c68b2f000-7f9c68b30000 rw-p 00001000 00:18 5444260                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwnativejava_services.so
+7f9c68b30000-7f9c68efc000 r-xp 00000000 00:18 5444333                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwiqm.so
+7f9c68efc000-7f9c690fc000 ---p 003cc000 00:18 5444333                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwiqm.so
+7f9c690fc000-7f9c69128000 rw-p 003cc000 00:18 5444333                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwiqm.so
+7f9c69128000-7f9c6912e000 rw-p 00000000 00:00 0 
+7f9c6912e000-7f9c6914d000 r-xp 00000000 08:05 23855125                   /lib/libncurses.so.5.9
+7f9c6914d000-7f9c6934d000 ---p 0001f000 08:05 23855125                   /lib/libncurses.so.5.9
+7f9c6934d000-7f9c6934e000 r--p 0001f000 08:05 23855125                   /lib/libncurses.so.5.9
+7f9c6934e000-7f9c6934f000 rw-p 00020000 08:05 23855125                   /lib/libncurses.so.5.9
+7f9c6934f000-7f9c69707000 r-xp 00000000 00:18 5444248                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxerces-c.so.27.0
+7f9c69707000-7f9c69906000 ---p 003b8000 00:18 5444248                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxerces-c.so.27.0
+7f9c69906000-7f9c6994a000 rw-p 003b7000 00:18 5444248                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libxerces-c.so.27.0
+7f9c6994a000-7f9c6994b000 rw-p 00000000 00:00 0 
+7f9c6994b000-7f9c699ba000 r-xp 00000000 00:18 5444206                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_serialization.so.1.44.0
+7f9c699ba000-7f9c69bba000 ---p 0006f000 00:18 5444206                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_serialization.so.1.44.0
+7f9c69bba000-7f9c69bbe000 rw-p 0006f000 00:18 5444206                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_serialization.so.1.44.0
+7f9c69bbe000-7f9c69bd7000 r-xp 00000000 00:18 5444249                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_settings_res.so
+7f9c69bd7000-7f9c69dd6000 ---p 00019000 00:18 5444249                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_settings_res.so
+7f9c69dd6000-7f9c69dd7000 rw-p 00018000 00:18 5444249                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_settings_res.so
+7f9c69dd7000-7f9c6a369000 r-xp 00000000 00:18 5444252                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlutil.so
+7f9c6a369000-7f9c6a568000 ---p 00592000 00:18 5444252                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlutil.so
+7f9c6a568000-7f9c6a5a1000 rw-p 00591000 00:18 5444252                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmlutil.so
+7f9c6a5a1000-7f9c6a5ad000 rw-p 00000000 00:00 0 
+7f9c6a5ad000-7f9c6a5f5000 r-xp 00000000 00:18 5444253                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmpath.so
+7f9c6a5f5000-7f9c6a7f4000 ---p 00048000 00:18 5444253                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmpath.so
+7f9c6a7f4000-7f9c6a7f8000 rw-p 00047000 00:18 5444253                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmpath.so
+7f9c6a7f8000-7f9c6a7fa000 rw-p 00000000 00:00 0 
+7f9c6a7fa000-7f9c6a80c000 r-xp 00000000 00:18 5444254                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_scalar.so
+7f9c6a80c000-7f9c6aa0b000 ---p 00012000 00:18 5444254                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_scalar.so
+7f9c6aa0b000-7f9c6aa0c000 rw-p 00011000 00:18 5444254                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmfl_scalar.so
+7f9c6aa0c000-7f9c6aa67000 r-xp 00000000 00:18 5444255                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwregexp.so
+7f9c6aa67000-7f9c6ac66000 ---p 0005b000 00:18 5444255                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwregexp.so
+7f9c6ac66000-7f9c6ac6d000 rw-p 0005a000 00:18 5444255                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwregexp.so
+7f9c6ac6d000-7f9c6ac84000 r-xp 00000000 08:05 23855147                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7f9c6ac84000-7f9c6ae83000 ---p 00017000 08:05 23855147                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7f9c6ae83000-7f9c6ae84000 r--p 00016000 08:05 23855147                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7f9c6ae84000-7f9c6ae85000 rw-p 00017000 08:05 23855147                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7f9c6ae85000-7f9c6ae8e000 r-xp 00000000 08:05 23855431                   /lib/x86_64-linux-gnu/libcrypt-2.13.so
+7f9c6ae8e000-7f9c6b08e000 ---p 00009000 08:05 23855431                   /lib/x86_64-linux-gnu/libcrypt-2.13.so
+7f9c6b08e000-7f9c6b08f000 r--p 00009000 08:05 23855431                   /lib/x86_64-linux-gnu/libcrypt-2.13.so
+7f9c6b08f000-7f9c6b090000 rw-p 0000a000 08:05 23855431                   /lib/x86_64-linux-gnu/libcrypt-2.13.so
+7f9c6b090000-7f9c6b0be000 rw-p 00000000 00:00 0 
+7f9c6b0be000-7f9c6b0c8000 r-xp 00000000 00:18 5444233                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libunwind.so.8.0.0
+7f9c6b0c8000-7f9c6b2c7000 ---p 0000a000 00:18 5444233                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libunwind.so.8.0.0
+7f9c6b2c7000-7f9c6b2c8000 rw-p 00009000 00:18 5444233                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libunwind.so.8.0.0
+7f9c6b2c8000-7f9c6b2d7000 rw-p 00000000 00:00 0 
+7f9c6b2d7000-7f9c6b2ea000 r-xp 00000000 00:18 5444208                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_signals.so.1.44.0
+7f9c6b2ea000-7f9c6b4e9000 ---p 00013000 00:18 5444208                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_signals.so.1.44.0
+7f9c6b4e9000-7f9c6b4ea000 rw-p 00012000 00:18 5444208                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_signals.so.1.44.0
+7f9c6b4ea000-7f9c6b5f0000 r-xp 00000000 00:18 5444207                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_regex.so.1.44.0
+7f9c6b5f0000-7f9c6b7f0000 ---p 00106000 00:18 5444207                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_regex.so.1.44.0
+7f9c6b7f0000-7f9c6b7f7000 rw-p 00106000 00:18 5444207                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_regex.so.1.44.0
+7f9c6b7f7000-7f9c6b818000 r-xp 00000000 00:18 5444209                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_filesystem.so.1.44.0
+7f9c6b818000-7f9c6ba17000 ---p 00021000 00:18 5444209                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_filesystem.so.1.44.0
+7f9c6ba17000-7f9c6ba19000 rw-p 00020000 00:18 5444209                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_filesystem.so.1.44.0
+7f9c6ba19000-7f9c6bdb0000 r-xp 00000000 00:18 5444239                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_res.so
+7f9c6bdb0000-7f9c6bfaf000 ---p 00397000 00:18 5444239                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_res.so
+7f9c6bfaf000-7f9c6bfb1000 rw-p 00396000 00:18 5444239                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwMATLAB_res.so
+7f9c6bfb1000-7f9c6bfbf000 rw-p 00000000 00:00 0 
+7f9c6bfbf000-7f9c6bfc1000 r-xp 00000000 00:18 5444238                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwresource_core.so
+7f9c6bfc1000-7f9c6c1c0000 ---p 00002000 00:18 5444238                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwresource_core.so
+7f9c6c1c0000-7f9c6c1c1000 rw-p 00001000 00:18 5444238                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwresource_core.so
+7f9c6c1c1000-7f9c6c1db000 r-xp 00000000 00:18 5444236                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbbmalloc.so.2
+7f9c6c1db000-7f9c6c2da000 ---p 0001a000 00:18 5444236                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbbmalloc.so.2
+7f9c6c2da000-7f9c6c2dd000 rw-p 00019000 00:18 5444236                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbbmalloc.so.2
+7f9c6c2dd000-7f9c6c2ea000 rw-p 00000000 00:00 0 
+7f9c6c2ea000-7f9c6c2f5000 r-xp 00000000 00:18 5444204                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuio.so.44.2
+7f9c6c2f5000-7f9c6c4f5000 ---p 0000b000 00:18 5444204                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuio.so.44.2
+7f9c6c4f5000-7f9c6c4f7000 rw-p 0000b000 00:18 5444204                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuio.so.44.2
+7f9c6c4f7000-7f9c6c6e9000 r-xp 00000000 00:18 5444200                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicui18n.so.44.2
+7f9c6c6e9000-7f9c6c8e8000 ---p 001f2000 00:18 5444200                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicui18n.so.44.2
+7f9c6c8e8000-7f9c6c8f4000 rw-p 001f1000 00:18 5444200                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicui18n.so.44.2
+7f9c6c8f4000-7f9c6ca45000 r-xp 00000000 00:18 5444198                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuuc.so.44.2
+7f9c6ca45000-7f9c6cc45000 ---p 00151000 00:18 5444198                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuuc.so.44.2
+7f9c6cc45000-7f9c6cc55000 rw-p 00151000 00:18 5444198                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicuuc.so.44.2
+7f9c6cc55000-7f9c6cc58000 rw-p 00000000 00:00 0 
+7f9c6cc58000-7f9c6da98000 r--p 00000000 00:18 5444199                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicudata.so.44.2
+7f9c6da98000-7f9c6dc97000 ---p 00e40000 00:18 5444199                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicudata.so.44.2
+7f9c6dc97000-7f9c6dc98000 rw-p 00e3f000 00:18 5444199                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libicudata.so.44.2
+7f9c6dc98000-7f9c6dcbe000 r-xp 00000000 00:18 5444227                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libexpat.so.1.5.0
+7f9c6dcbe000-7f9c6debd000 ---p 00026000 00:18 5444227                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libexpat.so.1.5.0
+7f9c6debd000-7f9c6dec0000 rw-p 00025000 00:18 5444227                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libexpat.so.1.5.0
+7f9c6dec0000-7f9c6e501000 r-xp 00000000 00:18 5444224                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log_setup.so.1.44.0
+7f9c6e501000-7f9c6e700000 ---p 00641000 00:18 5444224                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log_setup.so.1.44.0
+7f9c6e700000-7f9c6e733000 rw-p 00640000 00:18 5444224                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log_setup.so.1.44.0
+7f9c6e733000-7f9c6e735000 rw-p 00000000 00:00 0 
+7f9c6e735000-7f9c6e841000 r-xp 00000000 00:18 5444225                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log.so.1.44.0
+7f9c6e841000-7f9c6ea41000 ---p 0010c000 00:18 5444225                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log.so.1.44.0
+7f9c6ea41000-7f9c6ea4b000 rw-p 0010c000 00:18 5444225                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_log.so.1.44.0
+7f9c6ea4b000-7f9c6ea4c000 rw-p 00000000 00:00 0 
+7f9c6ea4c000-7f9c6ea62000 r-xp 00000000 00:18 5444211                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_thread.so.1.44.0
+7f9c6ea62000-7f9c6ec61000 ---p 00016000 00:18 5444211                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_thread.so.1.44.0
+7f9c6ec61000-7f9c6ec63000 rw-p 00015000 00:18 5444211                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_thread.so.1.44.0
+7f9c6ec63000-7f9c6ec65000 r-xp 00000000 00:18 5444215                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_system.so.1.44.0
+7f9c6ec65000-7f9c6ee65000 ---p 00002000 00:18 5444215                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_system.so.1.44.0
+7f9c6ee65000-7f9c6ee66000 rw-p 00002000 00:18 5444215                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_system.so.1.44.0
+7f9c6ee66000-7f9c6ee77000 r-xp 00000000 00:18 5444218                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_date_time.so.1.44.0
+7f9c6ee77000-7f9c6f076000 ---p 00011000 00:18 5444218                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_date_time.so.1.44.0
+7f9c6f076000-7f9c6f078000 rw-p 00010000 00:18 5444218                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libboost_date_time.so.1.44.0
+7f9c6f078000-7f9c6f07a000 r-xp 00000000 08:05 23855427                   /lib/x86_64-linux-gnu/libdl-2.13.so
+7f9c6f07a000-7f9c6f27a000 ---p 00002000 08:05 23855427                   /lib/x86_64-linux-gnu/libdl-2.13.so
+7f9c6f27a000-7f9c6f27b000 r--p 00002000 08:05 23855427                   /lib/x86_64-linux-gnu/libdl-2.13.so
+7f9c6f27b000-7f9c6f27c000 rw-p 00003000 08:05 23855427                   /lib/x86_64-linux-gnu/libdl-2.13.so
+7f9c6f27c000-7f9c6f283000 r-xp 00000000 08:05 23855354                   /lib/x86_64-linux-gnu/librt-2.13.so
+7f9c6f283000-7f9c6f482000 ---p 00007000 08:05 23855354                   /lib/x86_64-linux-gnu/librt-2.13.so
+7f9c6f482000-7f9c6f483000 r--p 00006000 08:05 23855354                   /lib/x86_64-linux-gnu/librt-2.13.so
+7f9c6f483000-7f9c6f484000 rw-p 00007000 08:05 23855354                   /lib/x86_64-linux-gnu/librt-2.13.so
+7f9c6f484000-7f9c6f61d000 r-xp 00000000 08:05 23855439                   /lib/x86_64-linux-gnu/libc-2.13.so
+7f9c6f61d000-7f9c6f81c000 ---p 00199000 08:05 23855439                   /lib/x86_64-linux-gnu/libc-2.13.so
+7f9c6f81c000-7f9c6f820000 r--p 00198000 08:05 23855439                   /lib/x86_64-linux-gnu/libc-2.13.so
+7f9c6f820000-7f9c6f821000 rw-p 0019c000 08:05 23855439                   /lib/x86_64-linux-gnu/libc-2.13.so
+7f9c6f821000-7f9c6f827000 rw-p 00000000 00:00 0 
+7f9c6f827000-7f9c6f83f000 r-xp 00000000 08:05 23855423                   /lib/x86_64-linux-gnu/libpthread-2.13.so
+7f9c6f83f000-7f9c6fa3e000 ---p 00018000 08:05 23855423                   /lib/x86_64-linux-gnu/libpthread-2.13.so
+7f9c6fa3e000-7f9c6fa3f000 r--p 00017000 08:05 23855423                   /lib/x86_64-linux-gnu/libpthread-2.13.so
+7f9c6fa3f000-7f9c6fa40000 rw-p 00018000 08:05 23855423                   /lib/x86_64-linux-gnu/libpthread-2.13.so
+7f9c6fa40000-7f9c6fa44000 rw-p 00000000 00:00 0 
+7f9c6fa44000-7f9c6fa5a000 r-xp 00000000 00:18 5459945                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgcc_s.so.1
+7f9c6fa5a000-7f9c6fc59000 ---p 00016000 00:18 5459945                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgcc_s.so.1
+7f9c6fc59000-7f9c6fc5a000 rw-p 00015000 00:18 5459945                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libgcc_s.so.1
+7f9c6fc5a000-7f9c6fcdd000 r-xp 00000000 08:05 23855429                   /lib/x86_64-linux-gnu/libm-2.13.so
+7f9c6fcdd000-7f9c6fedc000 ---p 00083000 08:05 23855429                   /lib/x86_64-linux-gnu/libm-2.13.so
+7f9c6fedc000-7f9c6fedd000 r--p 00082000 08:05 23855429                   /lib/x86_64-linux-gnu/libm-2.13.so
+7f9c6fedd000-7f9c6fede000 rw-p 00083000 08:05 23855429                   /lib/x86_64-linux-gnu/libm-2.13.so
+7f9c6fede000-7f9c6ffcf000 r-xp 00000000 00:18 5459948                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libstdc++.so.6.0.13
+7f9c6ffcf000-7f9c701cf000 ---p 000f1000 00:18 5459948                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libstdc++.so.6.0.13
+7f9c701cf000-7f9c701d6000 r--p 000f1000 00:18 5459948                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libstdc++.so.6.0.13
+7f9c701d6000-7f9c701d8000 rw-p 000f8000 00:18 5459948                    /private/biu/packages/matlab/R2012b/sys/os/glnxa64/libstdc++.so.6.0.13
+7f9c701d8000-7f9c701ed000 rw-p 00000000 00:00 0 
+7f9c701ed000-7f9c701f6000 r-xp 00000000 00:18 5444237                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcpp11compat.so
+7f9c701f6000-7f9c703f5000 ---p 00009000 00:18 5444237                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcpp11compat.so
+7f9c703f5000-7f9c703f6000 rw-p 00008000 00:18 5444237                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwcpp11compat.so
+7f9c703f6000-7f9c7048b000 r-xp 00000000 00:18 5444245                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwi18n.so
+7f9c7048b000-7f9c7068b000 ---p 00095000 00:18 5444245                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwi18n.so
+7f9c7068b000-7f9c70691000 rw-p 00095000 00:18 5444245                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwi18n.so
+7f9c70691000-7f9c70c19000 r-xp 00000000 00:18 5444360                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_interpreter.so
+7f9c70c19000-7f9c70e19000 ---p 00588000 00:18 5444360                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_interpreter.so
+7f9c70e19000-7f9c70ef9000 rw-p 00588000 00:18 5444360                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_interpreter.so
+7f9c70ef9000-7f9c70f94000 rw-p 00000000 00:00 0 
+7f9c70f94000-7f9c71048000 r-xp 00000000 00:18 5444297                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_dispatcher.so
+7f9c71048000-7f9c71247000 ---p 000b4000 00:18 5444297                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_dispatcher.so
+7f9c71247000-7f9c7124f000 rw-p 000b3000 00:18 5444297                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwm_dispatcher.so
+7f9c7124f000-7f9c712f4000 r-xp 00000000 00:18 5444337                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcr.so
+7f9c712f4000-7f9c714f3000 ---p 000a5000 00:18 5444337                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcr.so
+7f9c714f3000-7f9c714fc000 rw-p 000a4000 00:18 5444337                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwmcr.so
+7f9c714fc000-7f9c714fd000 rw-p 00000000 00:00 0 
+7f9c714fd000-7f9c715b3000 r-xp 00000000 00:18 5444334                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwjmi.so
+7f9c715b3000-7f9c717b3000 ---p 000b6000 00:18 5444334                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwjmi.so
+7f9c717b3000-7f9c717bb000 rw-p 000b6000 00:18 5444334                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwjmi.so
+7f9c717bb000-7f9c717bd000 rw-p 00000000 00:00 0 
+7f9c717bd000-7f9c71a74000 r-xp 00000000 00:18 5444256                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwservices.so
+7f9c71a74000-7f9c71c73000 ---p 002b7000 00:18 5444256                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwservices.so
+7f9c71c73000-7f9c71c8d000 rw-p 002b6000 00:18 5444256                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwservices.so
+7f9c71c8d000-7f9c71c9b000 rw-p 00000000 00:00 0 
+7f9c71c9b000-7f9c71d65000 r-xp 00000000 00:18 5444241                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmx.so
+7f9c71d65000-7f9c71f64000 ---p 000ca000 00:18 5444241                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmx.so
+7f9c71f64000-7f9c71f6a000 rw-p 000c9000 00:18 5444241                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmx.so
+7f9c71f6a000-7f9c720a0000 r-xp 00000000 00:18 5444246                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwfl.so
+7f9c720a0000-7f9c722a0000 ---p 00136000 00:18 5444246                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwfl.so
+7f9c722a0000-7f9c722ad000 rw-p 00136000 00:18 5444246                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libmwfl.so
+7f9c722ad000-7f9c722bd000 rw-p 00000000 00:00 0 
+7f9c722bd000-7f9c72357000 r-xp 00000000 00:18 5444240                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libut.so
+7f9c72357000-7f9c72557000 ---p 0009a000 00:18 5444240                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libut.so
+7f9c72557000-7f9c7255e000 rw-p 0009a000 00:18 5444240                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libut.so
+7f9c7255e000-7f9c72570000 rw-p 00000000 00:00 0 
+7f9c72570000-7f9c72591000 r-xp 00000000 08:05 23855437                   /lib/x86_64-linux-gnu/ld-2.13.so
+7f9c72591000-7f9c72596000 r--s 00034000 00:18 6275724                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-algorithms.jar
+7f9c72596000-7f9c72598000 r--s 00010000 00:18 6275723                    /private/biu/packages/matlab/R2012b/java/jarext/jung/jung-3d.jar
+7f9c72598000-7f9c7259a000 r--s 00000000 00:18 5326098                    /private/biu/packages/matlab/R2012b/java/jarext/guice/aopalliance.jar
+7f9c7259a000-7f9c7259c000 r--s 00004000 00:18 6179199                    /private/biu/packages/matlab/R2012b/java/jar/project/api.jar
+7f9c7259c000-7f9c725a1000 r--s 00027000 00:18 5362296                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/timeseries.jar
+7f9c725a1000-7f9c725a5000 r--s 00017000 00:18 5362350                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/mdldisc.jar
+7f9c725a5000-7f9c725b9000 r--s 000ba000 00:18 5362351                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/simulink.jar
+7f9c725b9000-7f9c72622000 rw-p 00000000 00:00 0 
+7f9c72622000-7f9c7265c000 r-xp 00000000 00:18 5444235                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbb.so.2
+7f9c7265c000-7f9c7275c000 ---p 0003a000 00:18 5444235                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbb.so.2
+7f9c7275c000-7f9c72760000 rw-p 0003a000 00:18 5444235                    /private/biu/packages/matlab/R2012b/bin/glnxa64/libtbb.so.2
+7f9c72760000-7f9c72766000 rw-p 00000000 00:00 0 
+7f9c72766000-7f9c72767000 r--s 00005000 00:18 5326099                    /private/biu/packages/matlab/R2012b/java/jarext/guice/guice-assistedinject.jar
+7f9c72767000-7f9c72768000 r--s 00002000 00:18 5083973                    /private/biu/packages/matlab/R2012b/java/jarext/Acme.jar
+7f9c72768000-7f9c7276a000 r--s 00007000 00:18 5362804                    /private/biu/packages/matlab/R2012b/java/jar/toolbox/mpc.jar
+7f9c7276a000-7f9c7276d000 r--s 00016000 00:18 5360071                    /private/biu/packages/matlab/R2012b/java/jar/help/helpui.jar
+7f9c7276d000-7f9c7276f000 r--s 0000a000 00:18 5326546                    /private/biu/packages/matlab/R2012b/java/jar/mvm.jar
+7f9c7276f000-7f9c72770000 r--s 00009000 00:18 5326545                    /private/biu/packages/matlab/R2012b/java/jar/fatalexit.jar
+7f9c72770000-7f9c72771000 r--s 00005000 00:18 5326548                    /private/biu/packages/matlab/R2012b/java/jar/timer.jar
+7f9c72771000-7f9c72774000 r--s 0000e000 00:18 5326543                    /private/biu/packages/matlab/R2012b/java/jar/mlservices.jar
+7f9c72774000-7f9c72779000 r--s 0002c000 00:18 5326547                    /private/biu/packages/matlab/R2012b/java/jar/services.jar
+7f9c72779000-7f9c72781000 rw-s 00000000 08:05 18087955                   /tmp/hsperfdata_lior/2647
+7f9c72781000-7f9c72782000 rw-p 00000000 00:00 0 
+7f9c72782000-7f9c72783000 r--p 00000000 00:00 0 
+7f9c72783000-7f9c7278a000 r--s 00000000 08:05 19011801                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f9c7278a000-7f9c72790000 rw-p 00000000 00:00 0 
+7f9c72790000-7f9c72791000 r--p 00020000 08:05 23855437                   /lib/x86_64-linux-gnu/ld-2.13.so
+7f9c72791000-7f9c72793000 rw-p 00021000 08:05 23855437                   /lib/x86_64-linux-gnu/ld-2.13.so
+7fffbfeba000-7fffbfed9000 rwxp 00000000 00:00 0                          [stack]
+7fffbfed9000-7fffbfedb000 rw-p 00000000 00:00 0 
+7fffbffff000-7fffc0000000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms64m -XX:NewRatio=3 -XX:MaxPermSize=128m -Xmx196m -XX:MaxDirectMemorySize=2147400000 -XX:+AllowUserSignalHandlers -Xrs -Dsun.awt.disableMixing=true -Djava.library.path=/private/biu/packages/matlab/R2012b/bin/glnxa64:/private/biu/packages/matlab/R2012b/sys/jxbrowser/glnxa64/lib vfprintf abort -Duser.language=en -Duser.country=US -Dfile.encoding=UTF-8 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+USERNAME=lior
+LD_LIBRARY_PATH=/private/biu/packages/matlab/R2012b/sys/os/glnxa64:/private/biu/packages/matlab/R2012b/bin/glnxa64:/private/biu/packages/matlab/R2012b/extern/lib/glnxa64:/private/biu/packages/matlab/R2012b/runtime/glnxa64:/private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64/server:/private/biu/packages/matlab/R2012b/sys/java/jre/glnxa64/jre/lib/amd64
+SHELL=/bin/tcsh
+DISPLAY=:0.0
+ARCH=glnxa64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x6bddc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x00000004
+SIGBUS: [libjvm.so+0x6bddc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x00000004
+SIGFPE: [libmwmcr.so+0x87220], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGPIPE: [libjvm.so+0x594f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x594f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libmwmcr.so+0x87220], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x597750], sa_mask[0]=0x08080002, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: [libmwmcr.so+0x85070], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: [libmwmcr.so+0x872d0], sa_mask[0]=0x08080002, sa_flags=0x00000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.0.0-32-generic #51-Ubuntu SMP Thu Mar 21 15:50:59 UTC 2013 x86_64
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC 31243, NOFILE 4096, AS infinity
+load average:0.10 0.22 0.36
+
+CPU:total 8 (8 cores per cpu, 2 threads per core) family 6 model 30 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, ht
+
+Memory: 4k page, physical 4016932k(742304k free), swap 11767508k(11767508k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (14.3-b01) for linux-amd64 JRE (1.6.0_17-b04), built on Oct 11 2009 01:08:48 by "java_re" with gcc 3.2.2 (SuSE Linux)
+
+time: Sun Aug  4 14:16:24 2013
+elapsed time: 2207 seconds
+

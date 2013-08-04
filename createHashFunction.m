@@ -15,12 +15,12 @@ function [hashFunction, collisions] = createHashFunction(featureSpaceSize, hashT
     sparseMatrixContent = ones(size(newIndices));
     if exist('useMinusOnes','var')
         if useMinusOnes
-            sparseMatrixContent = randi(2, [featureSpaceSize,1]  ) -1;
+            sparseMatrixContent = 2* randi(2, [featureSpaceSize,1]  ) -3;
         end
     end
     
     hashFunction = sparse(newIndices , 1: featureSpaceSize, sparseMatrixContent , hashTableSize, featureSpaceSize);
-    howManyMappedToSame = full(sum(hashFunction,2));
+    howManyMappedToSame = full(sum(abs(hashFunction),2));
     collisions  = hist(howManyMappedToSame ,0 : max(howManyMappedToSame ) );
     bar(0 : max(howManyMappedToSame ), collisions);
 
